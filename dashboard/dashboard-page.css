@@ -1,0 +1,832 @@
+/* .main{
+    background-image:url('/assets/dashboardPage.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: auto;
+    background-position: right;
+    background-position-y: 70px; 
+    background-attachment: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+} */
+
+
+.osdetails h4{
+    margin-top: 5%;
+    margin-bottom: 0%;
+    padding-left: 25%;
+    font-size: 1.5rem; /* 100% is equivalent to 1rem */
+    font-weight: bold;
+    color: rgb(140, 13, 13);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.osdetails {
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    flex-direction: column;
+    
+    margin: -5% 0 0 35%;
+    max-width: 30%;
+    font-size: 1rem; /* 100% is equivalent to 1rem */
+    font-weight: bold;
+    color: rgb(140, 13, 13);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.osdetails .out{
+    background-color: white;
+    /* width: 60%; */
+    height: 80%; 
+    margin-top: -50px;
+    border-radius: 25px;
+    padding: 1%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.osdetails .out:hover {
+    background-color: #f5f5f5; /* Change the hover background color as needed */
+}
+
+.osdetails button{
+   
+        width: 40%;
+        display: block;
+        margin-left: 25%;
+        margin-top: 20%;
+        padding: 2%;
+        color:white;
+        background-color: red;
+        border: 2px solid red;
+        border-radius: 5px;
+        font-size: 100%;
+        font-weight:bold;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        cursor: pointer;
+}
+
+
+
+
+.osdetails table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px; /* Adjust as needed */
+}
+
+.osdetails th, .osdetails td {
+    text-align: left;
+    padding: 10px;
+}
+
+.osdetails th {
+    width: 30%;
+    text-align: right;
+    padding-right: 10px;
+    font-weight: normal;
+}
+
+.osdetails td span {
+    display: block;
+    font-weight: bold;
+}
+/* Add a hover effect */
+
+
+/* Add transitions for a smoother effect */
+.osdetails {
+    transition: background-color 0.3s ease-in-out;
+    height: 300px;
+   
+}
+
+#preloader{
+    margin: 1% 0% 0% 45%;
+    height: 30vh;
+    /* width: 100%; */
+    align-items: center;
+    justify-content: center;
+    display: flex;
+   
+  }
+
+
+
+  .loader1 {
+    position: absolute;
+    margin-top: 31px;
+    width: 58px;
+    margin-left: 220px;
+    height: 58px;
+}
+
+.loader1:before , .loader1:after{
+  content: '';
+  border-radius: 50%;
+  position: absolute;
+  inset: 0;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3) inset;
+}
+.loader1:after {
+  box-shadow: 0 2px 0 #FF3D00 inset;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {  transform: rotate(0)}
+  100% { transform: rotate(360deg)}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  #preloader li{
+   border-radius: 4px;
+    display:inline-block;
+    width: 12px;
+    height: 49px;
+    margin: 0 1px;
+    background-color: #6e0909;
+    animation: popping .7s infinite alternate;
+  }
+  
+@keyframes popping {
+    0%{
+      transform: scale(1);
+    }
+    25%{
+      transform: scale(1);
+    }
+    50%{
+      transform: scale(1);
+    }
+    75%{
+      transform: scale(1);
+    }
+    100%{
+      transform: scaley(2.1);
+    }
+  }
+  #preloader li:nth-child(1){
+    animation-delay: .1s;
+  }
+  #preloader li:nth-child(2){
+    animation-delay: .2s;
+  }
+  #preloader li:nth-child(3){
+    animation-delay: .3s;
+  }
+  #preloader li:nth-child(4){
+    animation-delay: .4s;
+  }
+
+
+  .loader2 {
+    font-size: 48px;
+    font-weight: 600;
+    display: inline-block;
+    letter-spacing: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    box-sizing: border-box;
+    animation: spotlight 2s linear infinite alternate;
+  }
+  
+  @keyframes spotlight {
+    0% , 20% {
+      opacity: 1;
+      letter-spacing: 2px;
+     }
+   80% , 100% {
+      opacity: 0;
+      letter-spacing: 32px;
+     }
+  }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+ .underprocess {
+    margin-left: 40%;
+   
+} 
+
+
+
+
+
+
+
+
+.server-details strong{
+    margin: 0 15% 0 0%;
+    font-size: 1rem; /* 100% is equivalent to 1rem */
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.server-details span{
+    margin: 0 0 0 2%;
+    text-align: left;
+    font-size: 1rem; /* 100% is equivalent to 1rem */
+    font-weight: bold;
+    color: rgb(3, 2, 2);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+.heading{
+    text-align:center;
+    margin-left: -20%; 
+    margin-left: -25%;
+}
+
+.heading h1{
+    margin-left: 20%;
+    text-align: center; 
+    padding-bottom: 2%;  
+}
+
+.heading h2{    
+    margin-left: 22%;
+    text-align: center; 
+    padding-bottom: 3%;     
+}
+
+
+.heading a{
+    text-decoration: none;
+    color: red;
+    font-weight:bolder;
+    font-size: x-large;
+    margin-left: 35%;
+    margin-top: 5%;   
+    cursor: pointer;
+}
+
+
+.dashContent{
+     margin-left: 10%;
+    padding: 8% 15% 8% 0%;
+    display: flex;
+    
+}
+
+
+/* .progress-item.active {
+    
+    background-color: #de005d4b; 
+    color: #fff;
+    opacity: 1;
+}  */
+
+.dashContent .progress-item.active{
+    
+    opacity: 1;
+} 
+
+/* .dashContent.dim {
+    opacity: 0.5; 
+    pointer-events: none; 
+} */
+
+.dim {
+    /* background-color: #ccc !important;  */
+    color: #555 !important; /* Adjust the dim text color as needed */
+    opacity: 0.3;
+}
+
+.dashContent ul li.dark .icon,
+.dashContent ul li.dark .text {
+    color: darkgreen; /* Change the dark color as needed */
+}
+
+.dashContent ul{
+    display: flex;
+    margin-top: -8%;
+} 
+
+.dashContent ul li{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0% 4%;
+}
+.dashContent ul li .icon{
+    font-size: 32px;
+    color: rgb(140, 13, 13);
+    margin: 0 60px;
+    /* opacity: 0.5; */
+}
+.dashContent ul li .text{
+    font-size: large;
+    font-weight: bold;
+    color: rgb(140, 13, 13);
+    margin-left: 10%;
+    pointer-events: none;
+    /* opacity: 0.5; */
+
+}
+
+.dashContent ul li .progress{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: rgb(140, 13, 13);
+    margin: 13px 0;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    position: relative;
+    /* opacity: 0.5; */
+    z-index: -1;
+}
+.dashContent ul li .progress i{
+    color:white;
+    font-size: large;
+}
+
+.progress::after{
+    content: " ";
+    position: absolute;
+    width: 191.5px;
+    height: 8px;
+    background-color: rgb(128, 0, 0);
+    right: 30px;
+}
+
+/* .progress::before{
+    content: " ";
+    position: absolute;
+    width: 70px;
+    height: 8px;
+    background-color: green;
+    left: 30px;
+} */
+
+.one::after{
+    width: 0;
+    height: 0;
+}
+
+ul li .progress p{
+    font-size: 13px;
+}
+
+
+
+
+
+.headi{
+    text-align:center;
+    margin-left: 0%; 
+}
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+    
+.navigation{
+    position: fixed;
+    top: 25%;
+    background-color: black;
+    width: 60px;
+    height: 28%;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 0.8rem;
+}
+.navigation ul{
+    list-style: none;
+    margin-top: 10px;
+}
+.navigation ul li{
+
+    height: 70px;
+}
+.navigation ul li a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-left: -25px;
+}
+.navigation ul li a i{
+    color: red;
+    font-size: 200%;
+    padding-right: 5px;
+}
+.navigation ul li .innertext{
+    text-decoration: none;
+    font-weight: bolder;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";    
+    color: red;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    left: 4.5%;
+    margin-top: -5px;
+    opacity: 0;
+    pointer-events: none;
+    font-size: larger;
+}
+.navigation ul li:hover i{
+    color: red;
+    text-shadow:0 0 1px red,0 0 1px red,0 0 10px red,0 0 80px red;
+}
+.navigation ul li:hover .innertext{
+    opacity: 1;
+    transition: all 0.5s ease;
+    font-weight: bolder;
+}
+.navigation ul li .active i{
+    color: red;
+    bottom: 0;
+    border-bottom:5px solid red;
+    width: 80%;
+    display: inline-block;
+    transition: all 0.3s ease;
+    
+}
+
+
+
+
+
+
+
+
+
+
+#signup {
+    background-image: url(/assets/Cloud\ hosting-pana.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 80vh;
+    margin-top: -27%;
+    background-position: right;
+    background-attachment: fixed;
+}
+#signup button{
+    width: 70%;
+    display: block;
+    margin-left: 7%;
+    padding: 2%;
+    color:white;
+    background-color: red;
+    border: 2px solid red;
+    border-radius: 5px;
+    font-size: 100%;
+    font-weight:bold;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    cursor: pointer;
+}
+.signupform {
+    position: relative;
+    top: 43%;
+    background-color: #F5F5F5;
+    border: 1px solid #F5F5F5;
+    border-radius: 20px;
+    color: black;
+    height: 82%;
+    width: 30%;
+    margin-left: 20%;
+    margin-top: 4%;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.signupform .close{
+    float: right;
+    width: 10%;
+    margin-top: -11%;
+    text-decoration: none;
+    color: red;
+    font-weight: bolder;
+    font-size: xx-large;
+    cursor: pointer;
+}
+.signupform h1{
+    text-align: center;
+    padding: 6% 0 3% 0;
+    font-size: 170%;
+}
+.signupcontents{
+    padding: 2%;
+    padding-left: 15%;
+    position: relative;
+    padding-bottom: 20px;
+}
+.signupcontents label{
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 1%;
+    font-size: 110%;
+}
+.signupcontents input{
+    display: block;
+    width: 85%;
+    padding: 1.5%;
+    border: 2px solid rgb(155, 148, 148);
+    font-size: 95%;
+    border-radius: 3px;
+    background-color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.signupcontents i{
+    position: absolute;
+    top: 41.5px;
+    left:80%;
+    font-size: larger;
+}
+.signupcontents small{
+    font-weight: 500;
+    font-size: 97%;
+    position: absolute;
+}
+.signupcontents button{
+    width: 70%;
+    display: block;
+    margin-left: 7%;
+    padding: 2%;
+    color:white;
+    background-color: red;
+    border: 2px solid red;
+    border-radius: 5px;
+    font-size: 100%;
+    font-weight:bold;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    cursor: pointer;
+}
+.signupcontents #submit input:hover{
+    letter-spacing: 3px;
+}
+
+.signupcontents .error small{
+    color: red;
+}
+.error .signupcontents input{
+    border: 3px solid red;
+}
+.error .bi-exclamation-circle-fill{
+    color: red;
+}
+
+
+
+a{
+    text-align: center;
+    text-decoration: none;
+    margin-top: 2%;
+    color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#rhea-table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    display: none;
+    margin-left: auto; /* Align the table to the center */
+    margin-right: auto;
+    display: none; /* Hide the table initially */
+}
+
+.top-heading {
+position: absolute;
+top: 80px; /* Adjust this value to set the distance from the top */
+left: 100px; /* Adjust this value to set the distance from the left */
+/* Background color for the heading */
+padding: 20px; /* Add padding to the heading */
+z-index: 2; /* Ensure the heading stays on top of other elements, including the table */
+}
+#rhea-table th, #rhea-table td {
+border: 1px solid #dddddd;
+text-align: left;
+padding: 12px;
+}
+/* #check-rhea {
+display: none;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+padding: 10px; 
+max-width: 150px;
+} */
+
+li {
+display: flex;
+align-items: center;
+}
+
+strong {
+width: 120px;
+margin-right: 10px;
+text-align: left;
+display: inline-block;
+}
+
+#rhea-table th {
+background-color: #f2f2f2;
+}
+
+#rhea-table-body tr:nth-child(even) {
+background-color: #f2f2f2;
+}
+
+#rhea-table-body tr:hover {
+background-color: #ddd;
+}
+
+
+
+
+.parent-container {
+text-align: right;
+width: 100%;
+}
+
+#result-list {
+list-style: none;
+padding: 0;
+text-align: right; /* Align the text inside the #result-list to the right */
+}
+
+#threat-box-container {
+display: none;
+margin-top: 20px;
+}
+
+.threat-box {
+display: inline-block;
+margin-right: 10px;
+padding: 8px 15px;
+color: white;
+border-radius: 5px;
+font-weight: bold;
+}
+
+#critical-box {
+background-color:  darkred; /* Dark red for important */
+}
+#important-box {
+background-color:  red; /* Dark red for important */
+}
+
+#moderate-box {
+background-color: orange; /* Orange for moderate */
+}
+
+#low-box {
+background-color: #e67e22; /* Light orange for low */
+}
+#null-box {
+background-color: #796c60; /* Light orange for low */
+
+}
+.critical-cell {
+background-color: Darkred;
+color: white;
+}
+.important-cell {
+background-color: red;
+color: white;
+}
+
+.moderate-cell {
+background-color: orange;
+color: white;
+}
+
+.low-cell {
+background-color: #e67e22;
+color: white;
+}
+
+
+.null-cell {
+    background-color: #8b8076;
+    color: white;
+}
+
+
+#result-list{
+display: none;
+}
+
+#threat-box-container {
+display: none;
+}
+.result-container {
+margin-top: 10%;
+text-align: center;
+}
+
+#rhea-table th:nth-child(1),
+#rhea-table td:nth-child(1) {
+/* Increase width for Rhsa number column */
+width: 14%; /* Adjust the width as per your preference */
+}
+
+#rhea-table th:nth-child(2),
+#rhea-table td:nth-child(2) {
+/* Increase width for Release date column */
+width: 13%; /* Adjust the width as per your preference */
+}
+
+#rhea-table th:nth-child(3),
+#rhea-table td:nth-child(3) {
+/* Increase width for Release date column */
+width: 11%; /* Adjust the width as per your preference */
+}
+
+/* Add styles for the information button */
+
+
+.rhsa-button-container {
+display: flex;
+align-items: center;
+position: relative;
+}
+
+.rhsa-button-container:hover .info-tooltip {
+display: block;
+}
+
+.button-container {
+display: flex;
+align-items: center;
+}
+
+#rhea-table-body tr:nth-child(even) {
+background-color: #ffffff; /* White background color for even rows */
+}
+
+#rhea-table-body tr:nth-child(odd) {
+background-color: #f2f2f2; /* Light gray background color for odd rows */
+}
+
+
+
+
+
+button#download-csv {
+    margin: -175px 1500px;
+    padding: 11px 18px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}

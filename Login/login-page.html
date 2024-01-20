@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="./login-page.css">
+<head>
+    <!-- <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet"> -->
+  </head>
+  <!-- <button type="button" id="insert">Insert</button> -->
+    </form>
+<!-- 
+    <script>
+      $('#insert').click(function(){
+        Swal.fire({
+          icon: 'success',
+          title: 'Inserted Successfully',
+          html:
+          'Name : ' + $('#name').val() + '<br>' +
+          'Age : ' + $('#age').val()
+        })
+      })
+    </script> -->
+
+<section id="login">
+    
+    <div class="loginform">
+        <form id="form" action="">
+            <div class="loginhead">
+                <h1>Welcome Back! Login</h1>
+            </div>
+            <a class="close"></a>
+            <div class="logincontents">
+                <label>Username/E-mail id<b style="color: red;">*</b></label>
+                <input type="email" placeholder="Enter your email id" id="email-login" name ="email" required>
+              
+            </div>
+            <div class="logincontents">
+                <label>Password<b style="color: red;">*</b></label>
+                <input type="password" id="password-login" placeholder="Enter your password" minlength = "6" id="loginpassword" name ="password" required>
+                
+            </div>
+            <br>
+            <div class="logincontents">
+                <button type="submit" id="login-btn">LOGIN</button>
+            </div>
+            <div class="signupWant">
+                
+                <span>
+                    Don't have an account? <a href="../Signup/signup-page.html" id="registerLink">Register</a>
+                </span>
+            </div>
+            <br>
+        </form>
+        <script type="module" src="/Login/login-page.js"></script>
+    </div>
+</section>

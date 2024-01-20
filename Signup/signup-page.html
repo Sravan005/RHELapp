@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="./signup-page.css">
+
+<section id="signup">
+    <div class="signupform">
+        <form action="">
+
+            <div class="signuphead">
+                <h1>Hello user! Sign up</h1>
+            </div>     
+            <div class="signupcontents">
+                <label>Name<b style="color: red;">*</b></label>
+                <input type="text" placeholder="Enter your Name" name="Name" id="name" required>
+            </div>       
+            <div class="signupcontents">
+                <label>Email ID<b style="color: red;">*</b></label>
+                <input type="email" placeholder="Enter your email id" name="email" id="email" required>
+            </div>
+            
+            <div class="signupcontents">
+                <label>Password<b style="color: red;">*</b></label>
+                <input type="password" placeholder="Enter your password" minlength="6" id="password" name="password" required>
+            </div>
+
+            <div class="signupcontents">
+                <label>Confirm Password<b style="color: red;">*</b></label>
+                <input type="password" placeholder="Enter your password" minlength="6" id="confirmpassword" name="password" required>                
+            </div>
+    
+            
+            <br>
+            <div class="signupcontents" id="create-acct-btn">
+                <button type = "submit"id="signupsubmit" (click)="submit=true">SUBMIT</button>
+            </div>
+            <br>
+            <div class="loginWant">
+                <span>
+                    Already have an account? <a href="../Login/login-page.html">Login</a>
+                </span>
+            </div>
+            <br>
+        </form>
+        <!-- <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script> -->
+        <script type="module" src="/Signup/signup-page.js"></script>
+    </div>
+</section>

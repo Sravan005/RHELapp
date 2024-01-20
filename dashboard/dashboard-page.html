@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dashboard-page.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+
+<!-- *******************navigation********************************** -->
+
+<body>
+    <div class="navigation">
+        <ul id="nav-bar">
+            <li>
+                <a href="../homepage/home-page.html" class="btn">
+                    <i class="bi-house-door"></i>
+                </a>
+                <span class="innertext">HOME</span>
+            </li>
+
+            <li>
+                <a class="btn" href="../Login/login-page.html">
+                    <i class="bi bi-box-arrow-in-left"></i>
+                </a>
+                <span class="innertext" onclick="window.location.href='../Login/login-page.html';"
+                    style="cursor: pointer;">LOGIN</span>
+            </li>
+            <li>
+                <a class="btn" href="../Signup/signup-page.html">
+                    <i class="bi bi-person-plus-fill"></i>
+                </a>
+                <span class="innertext">SIGNUP/REGISTER</span>
+            </li>
+        </ul>
+    </div>
+
+
+<!-- *****************************Flowchart*********************************************** -->
+
+
+    <div class="main" id="main">
+        <div class="dashContent">
+            <ul>
+                <li class="progress-item dim" id="progress-one">
+                    <i class="icon bi bi-clipboard2-data"></i>
+                    <div class="progress one">
+                        <p><i class="bi bi-check-lg"></i></p>
+                    </div>
+                    <p class="text">Fill Your VM &nbsp;&nbsp; credentials</p>
+                </li>
+                <li class="progress-item dim" id="progress-two">
+                    <i class="icon bi bi-layout-text-window-reverse"></i>
+                    <div class="progress two">
+                        <p><i class="bi bi-check-lg"></i></p>
+                    </div>
+                    <p class="text">Check Your Server&nbsp;&nbsp;Details</p>
+                </li>
+                <li class="progress-item dim" id="progress-three">
+                    <i class="icon bi bi-calendar-check"></i>
+                    <div class="progress three">
+                        <p><i class="bi bi-check-lg"></i></p>
+                    </div>
+                    <p class="text">Under Processing</p>
+                </li>
+                <li class="progress-item dim" id="progress-four">
+                    <i class="icon bi bi-123"></i>
+                    <div class="progress four">
+                        <p><i class="bi bi-check-lg"></i></p>
+                    </div>
+                    <p class="text">Data</p>
+                </li>
+                <li class="progress-item dim" id="progress-five">
+                    <i class="icon bi bi-box-arrow-in-right"></i>
+                    <div class="progress five">
+                        <p><i class="bi bi-check-lg"></i></p>
+                    </div>
+                    <p class="text">Submit</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+<!-- **************************************Homepage**************************************************** -->
+
+    <div class="headi" id="headi">
+        <h1>Welcome <b style="color: red; text-transform: capitalize;">User </b>!</h1>
+    </div>
+
+    <div class="heading" id="heading">
+        <br>
+        <h2> Ready to Check your Patches ?</h2>
+        <a id="get-started" onclick="showSignup()">Get Started <i class="bi bi-arrow-right"></i> </a>
+    </div>
+
+<!-- *******************************server details********************************************* -->
+
+
+    <section id="signup" style="display: none;">
+        <div class="signupform">
+            <form id="ssh-config-form" onsubmit="signupFormSubmitted(); return false;">
+                <div id="serverdetails">
+                    <div class="signuphead" id="signuphead">
+                        <h1>Hello user! Fill your server Details</h1>
+                    </div>
+                    <div class="signupcontents">
+                        <label>IP Address<b style="color: red;">*</b></label>
+                        <input placeholder="Enter your server IP" id="host" required>
+                    </div>
+                    <div class="signupcontents">
+                        <label>Username<b style="color: red;">*</b></label>
+                        <input type="username" placeholder="Enter your username" id="username" required>
+                    </div>
+                    <div class="signupcontents">
+                        <label>Password<b style="color: red;">*</b></label>
+                        <input type="password" placeholder="Enter your password" id="password" name="password" required>
+                    </div>
+                    <br>
+                    <div class="signupcontents" id="create-acct-btn">
+                        <button type="submit" id="signupsubmit">SUBMIT</button>
+
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+<!-- **********************************server-details*********************************************** -->
+
+<div id="preloader" style="display: none;">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+<div class="osdetails" id="osdetails" style="display: none;">
+    <div class="out">
+    <h4 id="results-heading" style="display: none;">Server Details</h4>
+    <ul id="result-list" style="list-style-type: none;"></ul>
+</div>
+
+    <span class="loader1" id="loader11" ></span>
+    <button id="check-rhea" style="display: none;" onclick="checkbuttonclicked()">Check Vulnerability</button>
+
+</div>
+
+
+
+
+<!-- **************************************under-processing********************************************* -->
+
+<div class="underprocess" id="underprocess" style="display: none;">
+
+    <span class="loader2" id="loader2">Loading</span>
+
+    </div>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- **********************************************Table********************************************************* -->
+
+
+     <button id="download-csv" style="display: none;">Download as CSV</button>
+        <!-- Add the loading GIF element -->
+
+       <div class="result-container">
+            <div id="server-info"></div>
+            
+       <table id="rhea-table">
+            <thead>
+                <tr>
+                    <th>Rhsa number </th>
+                    <th>Threat <span id="threat-sort-arrow">&#9660;</span></th>
+                    <th>Release date</th>
+                    <th>Note</th>
+                </tr>
+            </thead>
+        <label for="threat-filter" id="threat-filter-label" style="display: none;">Filter by Threat Level:</label>
+            
+<select id="threat-filter" style="display: none;">
+    
+    <option value="all">All</option>
+    <option value="Critical">Critical</option>
+    <option value="Important">Important</option>
+    <option value="Moderate">Moderate</option>
+    <option value="Low">Low</option>
+    <option value="null">null</option>
+    
+</select>
+            <tbody id="rhea-table-body"></tbody>
+        </table>
+       </div>
+
+
+        <div id="threat-box-container">
+            <div class="threat-box" id="critical-box"></div>
+            <div class="threat-box" id="important-box"></div>
+            <div class="threat-box" id="moderate-box"></div>
+            <div class="threat-box" id="low-box"></div>
+            <div class="threat-box" id="null-box"></div>
+        </div>
+        
+    </div>
+
+
+
+
+
+
+
+<!-- *******************************************scripts***************************************************** -->
+    
+    
+    <script>
+        function showSignup() {
+            var signupHead = document.getElementById('signup');
+            var main = document.getElementById('main');
+            var heading = document.getElementById('heading');
+            var headi = document.getElementById('headi');
+            var preloader = document.getElementById('preloader');
+            // var dashContent = document.getElementById('dashContent');
+
+            var progressItems = document.querySelectorAll('.dashContent ul li');
+            if (signupHead) {
+                // main.style.display = 'none';
+                signupHead.style.display = 'block';
+                heading.style.display = 'none';
+                headi.style.display = 'none';
+
+                progressItems.forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Add "active" class to the desired progress item (e.g., progress-one)
+                var activeProgressItem = document.getElementById('progress-one');
+                if (activeProgressItem) {
+                    activeProgressItem.classList.add('active');
+                } else {
+                    console.error("Element with id 'progress-one' not found.");
+                }
+            } else {
+                console.error("Element with id 'signuphead' not found.");
+            }
+        }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize the current step
+            var currentStep = 0;
+
+            // Function to update the progress steps
+            function updateProgress() {
+                var progressItems = document.querySelectorAll('.dashContent ul li');
+
+                // Update classes based on the current step
+                progressItems.forEach(function (item, index) {
+                    if (index === currentStep) {
+                        item.classList.add('active');
+                        item.classList.remove('dim');
+                    } else if (index < currentStep) {
+                        item.classList.remove('active');
+                        item.classList.remove('dim');
+                    } else {
+                        item.classList.remove('active');
+                        item.classList.add('dim');
+                    }
+                });
+            }
+            function stepCompleted() {
+                // Update the current step
+                currentStep++;
+
+                // Update the progress steps
+                updateProgress();
+            }
+
+            // Function to show the signup section
+            function showSignup() {
+                var signupHead = document.getElementById('signup');
+                var main = document.getElementById('main');
+                var heading = document.getElementById('heading');
+                var headi = document.getElementById('headi');
+                var img = document.getElementById('img1');
+                var dashContent = document.querySelector('.dashContent');
+                var progressItems = document.querySelectorAll('.dashContent ul li');
+
+                if (signupHead) {
+                    signupHead.style.display = 'block';
+                    heading.style.display = 'none';
+                    headi.style.display = 'none';
+                    img.style.display = 'none';
+
+                    // Reset the current step to 0 when showing the signup section
+                    currentStep = 0;
+
+                    // Update the progress steps
+                    updateProgress();
+                }
+
+                else {
+                    console.error("Element with id 'signuphead' not found.");
+                }
+
+                // Add a class to dashContent during initial load
+                dashContent.classList.add('dim');
+
+                // Add a class to the first progress item to make its icon and text dark
+                progressItems[0].classList.add('dark');
+            }
+
+            // Example: Trigger this function when a step is completed
+            window.signupFormSubmitted = function () {
+                // Update the progress after the signup form is submitted
+                stepCompleted();
+            }
+            window.checkbuttonclicked = function () {
+                // Update the progress after the signup form is submitted
+                stepCompleted();
+            }
+            window.loadingdone = function () {
+                // Update the progress after the signup form is submitted
+                stepCompleted();
+            }
+
+            // Example: Reset the progress when
+        });
+
+
+    </script>
+
+
+
+
+<script>
+    // Create a WebSocket connection
+    const socket = new WebSocket('ws://localhost:3002');
+
+    socket.addEventListener('message', (event) => {
+        const message = JSON.parse(event.data);
+
+        if (message.type === 'data-update') {
+            // Update your UI or activate the check-rhea button
+           activateCheckrhsaButton();
+        }
+    });
+
+    function activateCheckrhsaButton() {
+        const loading = document.getElementById('loader11');
+        loading.style.display = 'none';
+        const checkRheaButton = document.getElementById('check-rhea');
+        checkRheaButton.style.display = 'block';        
+    }
+</script>
+
+
+<script type="module" src="./dashboard.js"></script>

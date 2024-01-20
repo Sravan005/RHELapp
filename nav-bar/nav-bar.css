@@ -1,0 +1,64 @@
+
+        
+.navigation{
+    position: fixed;
+    top: 25%;
+    background-color: black;
+    width: 60px;
+    height: 47%;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 0.8rem;
+}
+.navigation ul{
+    list-style: none;
+    margin-top: 30px;
+}
+.navigation ul li{
+
+    height: 70px;
+}
+.navigation ul li a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-left: -25px;
+}
+.navigation ul li a i{
+    color: red;
+    font-size: 200%;
+    padding-right: 5px;
+}
+.navigation ul li .innertext{
+    text-decoration: none;
+    font-weight: bolder;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";    
+    color: red;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    left: 4.5%;
+    margin-top: -28px;
+    opacity: 0;
+    pointer-events: none;
+    font-size: larger;
+}
+
+.navigation ul li:hover i{
+    color: red;
+    text-shadow:0 0 1px red,0 0 1px red,0 0 10px red,0 0 80px red;
+}
+.navigation ul li:hover .innertext{
+    opacity: 1;
+    transition: all 0.5s ease;
+    font-weight: bolder;
+}
+.navigation ul li .active i{
+    color: red;
+    bottom: 0;
+    border-bottom:5px solid red;
+    width: 80%;
+    display: inline-block;
+    transition: all 0.3s ease;
+    
+}
