@@ -18,10 +18,10 @@
       become: yes
   
     - name: Install app dependencies using package.json
-      command: npm install      
+      command: npm install /var/lib/awx/projects/_10__rhel_app/package.json    
       become: yes
  
     - name: Run Node.js app
-      command: node ./src/server.mjs
+      command: node /var/lib/awx/projects/_10__rhel_app/src/server.mjs 
       
       become: yes
