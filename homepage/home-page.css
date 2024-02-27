@@ -12,7 +12,7 @@
     color: rgb(156, 12, 12);
     font-size: 110%;
     font-weight: bold;
-    padding-left: 5%;   
+    padding-left: 10%;   
     margin-top: 1%;
     position: absolute;
 
@@ -21,18 +21,23 @@
 .logo span{
     color: black;
     font-size: 120%;
-    margin-left: 10%;
+    margin-left: 15%;
     position: absolute;
+    width: 50%;
 }
 
 .logo h3{
     color:  rgb(156, 12, 12);
-    font-size: 70%;
+    font-size: 90%;
     font-weight: bold;    
     left:40%;
-    margin-top: 17%;
+    margin-top: 20%;
     margin-left: 0px;
     margin-bottom: 10%;
+    font-style: italic;
+    border-left: 2px solid #333;
+    margin-top: 15%;
+    padding-left: 10px;
 }
 
 
@@ -49,7 +54,20 @@ margin: 0 13% 20% 0;
 }
 
 
-
+.btn1 {
+    background-color: rgb(190, 85, 85); /* Green */
+    
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 30%;
+    margin-left: 27%;
+    cursor: pointer;
+  }
 .logo h2 {
     font-size: 2rem;
     color: #ca3b17;
@@ -65,7 +83,8 @@ margin: 0 13% 20% 0;
     color: rgb(156, 12, 12);
     font-size: 150%;
     cursor: pointer;
-    padding-left: 25%;
+    padding-left: 30%;
+    margin-top: 30%;
 
 }
 

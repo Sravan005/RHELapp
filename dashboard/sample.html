@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./njsdf.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <!-- ApexCharts CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/apexcharts@3.27.1/dist/apexcharts.min.css">
+
+</head>
+
+
+
+<!-- *******************navigation********************************** -->
+
+<body>
+  <div class="navigation">
+      <ul id="nav-bar">
+          <li>
+              <a href="../homepage/home-page.html" class="btn">
+                  <i class="bi-house-door"></i>
+              </a>
+              <span class="innertext">HOME</span>
+          </li>
+
+          <li>
+              <a class="btn" href="../Login/login-page.html">
+                  <i class="bi bi-box-arrow-in-left"></i>
+              </a>
+              <span class="innertext" onclick="window.location.href='../Login/login-page.html';"
+                  style="cursor: pointer;">LOGIN</span>
+          </li>
+          <li>
+              <a class="btn" href="../Signup/signup-page.html">
+                  <i class="bi bi-person-plus-fill"></i>
+              </a>
+              <span class="innertext">SIGNUP/REGISTER</span>
+          </li>
+      </ul>
+  </div>
+
+
+  <!-- *****************************Flowchart*********************************************** -->
+
+  <div class="main" id="main">
+      <div class="dashContent">
+          <ul>
+              <li class="progress-item dim" id="progress-one">
+                  <i class="icon bi bi-clipboard2-data"></i>
+                  <div class="progress one">
+                      <p><i class="bi bi-check-lg"></i></p>
+                  </div>
+                  <p class="text">Fill Your VM &nbsp;&nbsp; credentials</p>
+              </li>
+              <li class="progress-item dim" id="progress-two">
+                  <i class="icon bi bi-layout-text-window-reverse"></i>
+                  <div class="progress two">
+                      <p><i class="bi bi-check-lg"></i></p>
+                  </div>
+                  <p class="text">Check Your Server&nbsp;&nbsp;Details</p>
+              </li>
+              <li class="progress-item dim" id="progress-three">
+                  <i class="icon bi bi-calendar-check"></i>
+                  <div class="progress three">
+                      <p><i class="bi bi-check-lg"></i></p>
+                  </div>
+                  <p class="text">Under Processing</p>
+              </li>
+              <li class="progress-item dim" id="progress-four">
+                  <i class="icon bi bi-123"></i>
+                  <div class="progress four">
+                      <p><i class="bi bi-check-lg"></i></p>
+                  </div>
+                  <p class="text">Data</p>
+              </li>
+              <li class="progress-item dim" id="progress-five">
+                  <i class="icon bi bi-box-arrow-in-right"></i>
+                  <div class="progress five">
+                      <p><i class="bi bi-check-lg"></i></p>
+                  </div>
+                  <p class="text">Visualize </p>
+              </li>
+          </ul>
+      </div>
+  </div>
+
+
+
+<div id="homes">
+
+<div class="container mt-5" id="boxes1">
+  <!-- Boxes for Critical, Important, Moderate, and Low Counts -->
+  <div class="row justify-content-center" id="boxContainer">
+      <!-- Boxes will be dynamically added here by the JavaScript code -->
+  </div>
+
+</div>
+
+<div class="container mt-5" id="charts">
+  <div class="row justify-content-center">
+      <div class="col-md-6 mb-4">
+          <div id="chart1"></div>
+      </div>
+      <div class="col-md-6 mb-4">
+          <div id="chart2"></div>
+      </div>
+      <div class="col-md-12 mb-4">
+          <div id="chart3"></div>
+      </div>
+  </div>
+</div>
+</div>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts@3.27.1/dist/apexcharts.min.js"></script>
+
+<script>
+
+const commonColorsRGB = [
+'#a81414cf',
+
+'#a814147d',
+
+'#80808099',
+
+
+ '#8080804f'   // Green
+];
+  // Chart 1
+  var options1 = {
+    series: [{
+      name: 'Marine Sprite',
+      data: [1, 55, 41, 37, 22, 43, 21]
+    }, {
+      name: 'Striking Calf',
+      data: [53, 32, 33, 52, 13, 43, 32]
+    }, {
+      name: 'Tank Picture',
+      data: [12, 17, 11, 9, 15, 11, 20]
+    }, {
+      name: 'Bucket Slope',
+      data: [9, 7, 5, 8, 6, 9, 4]
+    }],
+    colors: commonColorsRGB,
+    chart: {
+    type: 'bar',
+    width: 750,
+    height: 300,
+    stacked: true,
+  },
+    plotOptions: {
+      bar: {
+        horizontal: true,
+        dataLabels: {
+          total: {
+            enabled: true,
+            offsetX: 0,
+            style: {
+              fontSize: '13px',
+              fontWeight: 100
+            }
+          }
+        }
+      },
+    },
+    stroke: {
+      width: 1,
+      colors: ['#fff']
+    },
+    title: {
+      text: 'Fiction Books Sales'
+    },
+    xaxis: {
+      categories: [2008, 2009, 2010, 2011, 2012, 2013, 2014],
+      labels: {
+        formatter: function (val) {
+          return val + "K"
+        }
+      }
+    },
+    yaxis: {
+      title: {
+        text: undefined
+      },
+    },
+    tooltip: {
+      y: {
+        formatter: function (val) {
+          return val + "K"
+        }
+      }
+    },
+    fill: {
+      opacity: 1
+    },
+    legend: {
+      position: 'top',
+      horizontalAlign: 'left',
+      offsetX: 0
+    }
+  };
+
+  var chart1 = new ApexCharts(document.querySelector("#chart1"), options1);
+  chart1.render();
+
+  // Chart 2
+  var options2 = {
+    series: [24, 469, 41, 17],
+    colors: commonColorsRGB,
+    chart: {
+      type: 'donut',
+    width: 450,
+    height: 350
+    },
+    responsive: [{
+      breakpoint: 480,
+      options: {
+        chart: {
+          width: 200
+        },
+        legend: {
+          position: 'bottom'
+        }
+      }
+    }]
+  };
+
+  var chart2 = new ApexCharts(document.querySelector("#chart2"), options2);
+  chart2.render();
+  
+  // Chart 3
+// Assuming chart3Data is an array of objects with the structure { year: number, data: { Critical: number, Important: number, Moderate: number, Low: number } }
+// If not, you need to adjust this part based on the structure of your data.
+
+const chart3Data = [
+  { year: 2024, data: { Critical: 10, Important: 15, Moderate: 20, Low: 21 } },
+  { year: 2023, data: { Critical: 8, Important: 12, Moderate: 18, Low: 22 } },
+  { year: 2022, data: { Critical: 12, Important: 18, Moderate: 22, Low: 28 } },
+  { year: 2021, data: { Critical: 15, Important: 20, Moderate: 25, Low: 30 } }
+];
+
+const series = {
+  monthDataSeries1: {
+    prices: chart3Data.flatMap(item => [item.data.Critical, item.data.Important, item.data.Moderate, item.data.Low]),
+    dates: chart3Data.map(item => new Date(`${item.year}-01-01`).getTime())
+  }
+};
+
+const options3 = {
+  series: [{
+    name: "critical",
+    data: chart3Data.map(item => item.data.Critical)
+  },
+  {
+    name: "important",
+    data: chart3Data.map(item => item.data.Important)
+  },
+  {
+    name: "moderate",
+    data: chart3Data.map(item => item.data.Moderate)
+  },
+  {
+    name: "low",
+    data: chart3Data.map(item => item.data.Low)
+  }
+
+],
+colors: commonColorsRGB,
+
+chart: {
+    type: 'area',
+    height: 350,
+    width: 1100,
+    zoom: {
+      enabled: false
+    }
+  },
+  dataLabels: {
+    enabled: false
+  },
+  stroke: {
+    curve: 'straight'
+  },
+  title: {
+    text: 'Fundamental Analysis of Stocks',
+    align: 'left'
+  },
+  subtitle: {
+    text: 'Price Movements',
+    align: 'left'
+  },
+  labels: series.monthDataSeries1.dates,
+  xaxis: {
+    type: 'category',
+    categories: chart3Data.map(item => item.year.toString()),
+  },
+  yaxis: {
+    opposite: true
+  },
+  legend: {
+    horizontalAlign: 'left'
+  }
+};
+
+const chart3 = new ApexCharts(document.querySelector("#chart3"), options3);
+chart3.render();
+
+
+
+
+
+
+
+
+
+
+const boxesData = [
+              { type: "Critical", count: 20},
+              { type: "Important", count: 50 },
+              { type: "Moderate", count: 30 },
+              { type: "Low", count: 10 },
+            ];
+          
+            // Get the container where boxes will be added
+            const boxContainer = document.getElementById("boxContainer");
+          
+            // Loop through the data and create boxes dynamically
+            boxesData.forEach((data) => {
+              const boxWrapper = document.createElement("div");
+              boxWrapper.className = "col-md-3 mb-4";
+          
+              const box = document.createElement("div");
+              box.className = `box ${data.type.toLowerCase()}`;
+              box.innerHTML = `
+                <h3>${data.type}</h3>
+                <p>Count: ${data.count}</p>
+              `;
+          
+              boxWrapper.appendChild(box);
+              boxContainer.appendChild(boxWrapper);
+            });
+</script>

@@ -7,6 +7,7 @@ import { getDatabase, ref, set } from 'https://www.gstatic.com/firebasejs/9.6.10
 const firebaseConfig = {
   apiKey: "AIzaSyBwqeerfgu8xdW3crXGcxQ7IT15hHzc0Dw",
   authDomain: "uplifted-kit-368217.firebaseapp.com",
+  databaseURL: "https://uplifted-kit-368217-default-rtdb.firebaseio.com",
   projectId: "uplifted-kit-368217",
   storageBucket: "uplifted-kit-368217.appspot.com",
   messagingSenderId: "954331177043",
@@ -50,15 +51,27 @@ document.addEventListener('DOMContentLoaded', function () {
         createUserWithEmailAndPassword(auth, semail, spassword)
         .then((userCredential) => {
           const user = userCredential.user;
-          const userRef = doc(db, "users/" + user.uid);
-          // const userDocRef = doc(db, "users", user.uid);
-
+          const userRef = doc(db, "users/" + user.uid);   
+          const popup2 = document.getElementById("popup2");
+          const closeButton2 = popup2.querySelector(".close-popup2");
+        
+         
+          const popupContent2 = popup2.querySelector(".popup-content2");
+        
+          popupContent2.innerHTML = `
+          <span class="close-popup2">&times;</span>
+          <p>Account Registered!</p>
+        `;
+        popup2.style.display = "block";
+          closeButton2.addEventListener("click", function() {
+            popup2.style.display = "none";
+        });      
           setDoc(userRef, {
             email: semail,
             name: displayName
           }).then(() => {
             console.log("Data successfully written:", userRef);
-            alert("Success! Account created." + displayName);
+            // alert("Success! Account created." + displayName);
             redirectToAnotherPage();
           }).catch((error) => {
             console.error("Error writing data:", error);
@@ -68,7 +81,28 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          window.alert("Error occurred. Try again." + errorCode + errorMessage);
+          const popup = document.getElementById("popup");
+          const popupContent = popup.querySelector(".popup-content");
+          
+          const errorCodeSpan = document.getElementById("errorCode");
+          const errorMessageSpan = document.getElementById("errorMessage");
+          
+          
+          popupContent.innerHTML = `
+              <span class="close-popup">&times;</span>
+              <p> ${errorCode}</p>
+              <p>${errorMessage}</p>
+          `;
+          
+          // Display the popup
+          popup.style.display = "block";
+          
+          // Close the popup when the close button is clicked
+          const closeButton = popup.querySelector(".close-popup");
+          
+          closeButton.addEventListener("click", function() {
+          popup.style.display = "none";
+          });
         });
     }
   });
@@ -78,3 +112,18 @@ document.addEventListener('DOMContentLoaded', function () {
 function redirectToAnotherPage() {
 window.location.href = '/Login/login-page.html';
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

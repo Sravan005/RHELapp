@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./dashboard-page.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <!-- ApexCharts CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/apexcharts@3.27.1/dist/apexcharts.min.css">
+
 </head>
 
 <!-- *******************navigation********************************** -->
@@ -37,8 +40,7 @@
     </div>
 
 
-<!-- *****************************Flowchart*********************************************** -->
-
+    <!-- *****************************Flowchart*********************************************** -->
 
     <div class="main" id="main">
         <div class="dashContent">
@@ -76,7 +78,7 @@
                     <div class="progress five">
                         <p><i class="bi bi-check-lg"></i></p>
                     </div>
-                    <p class="text">Submit</p>
+                    <p class="text">Visualize </p>
                 </li>
             </ul>
         </div>
@@ -84,7 +86,7 @@
 
 
 
-<!-- **************************************Homepage**************************************************** -->
+    <!-- **************************************Homepage**************************************************** -->
 
     <div class="headi" id="headi">
         <h1>Welcome <b style="color: red; text-transform: capitalize;">User </b>!</h1>
@@ -96,104 +98,161 @@
         <a id="get-started" onclick="showSignup()">Get Started <i class="bi bi-arrow-right"></i> </a>
     </div>
 
-<!-- *******************************server details********************************************* -->
+    <!-- *******************************server details********************************************* -->
 
 
     <section id="signup" style="display: none;">
-        <div class="signupform">
-            <form id="ssh-config-form" onsubmit="signupFormSubmitted(); return false;">
-                <div id="serverdetails">
-                    <div class="signuphead" id="signuphead">
-                        <h1>Hello user! Fill your server Details</h1>
-                    </div>
-                    <div class="signupcontents">
-                        <label>IP Address<b style="color: red;">*</b></label>
-                        <input placeholder="Enter your server IP" id="host" required>
-                    </div>
-                    <div class="signupcontents">
-                        <label>Username<b style="color: red;">*</b></label>
-                        <input type="username" placeholder="Enter your username" id="username" required>
-                    </div>
-                    <div class="signupcontents">
-                        <label>Password<b style="color: red;">*</b></label>
-                        <input type="password" placeholder="Enter your password" id="password" name="password" required>
-                    </div>
-                    <br>
-                    <div class="signupcontents" id="create-acct-btn">
-                        <button type="submit" id="signupsubmit">SUBMIT</button>
+        <div class="signup-container">
+
+            <div class="signupform">
+                <form id="ssh-config-form" onsubmit="signupFormSubmitted(); return false;">
+                    <div id="serverdetails">
+                        <div class="signuphead" id="signuphead">
+                            <h1 >Fill your server Details</h1>
+                        </div>
+                        <div class="signupcontents">
+                            <label>IP Address<b style="color: red;">*</b></label>
+                            <input placeholder="Enter your server IP" id="host" required>
+                        </div>
+                        <div class="signupcontents">
+                            <label>Username<b style="color: red;">*</b></label>
+                            <input type="username" placeholder="Enter your username" id="username" required>
+                        </div>
+                        <div class="signupcontents">
+                            <label>Password<b style="color: red;">*</b></label>
+                            <input type="password" placeholder="Enter your password" id="password" name="password"
+                                required>
+                        </div>
+                        <br>
+                        <div class="signupcontents" id="create-acct-btn">
+                            <button type="submit" id="signupsubmit">SUBMIT</button>
+
+                        </div>
 
                     </div>
+                </form>
+            </div>
+            <div class="signup-image">
+                <!-- Your image tag goes here -->
+            </div>
 
-                </div>
-            </form>
         </div>
+
     </section>
 
 
-<!-- **********************************server-details*********************************************** -->
-
-<div id="preloader" style="display: none;">
-    <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-</div>
-
-<div class="osdetails" id="osdetails" style="display: none;">
-    <div class="out">
-    <h4 id="results-heading" style="display: none;">Server Details</h4>
-    <ul id="result-list" style="list-style-type: none;"></ul>
-</div>
-
-    <span class="loader1" id="loader11" ></span>
-    <button id="check-rhea" style="display: none;" onclick="checkbuttonclicked()">Check Vulnerability</button>
-
-</div>
 
 
 
+    <!-- **********************************server-details*********************************************** -->
 
-<!-- **************************************under-processing********************************************* -->
+    <div id="preloader" style="display: none;">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
 
-<div class="underprocess" id="underprocess" style="display: none;">
+    <div class="osdetails" id="osdetails" style="display: none;">
+        <div class="out">
+            <h4 id="results-heading" style="display: none;">Server Details</h4>
+            <ul id="result-list" style="list-style-type: none;"></ul>
+        </div>
 
-    <span class="loader2" id="loader2">Loading</span>
+        <span class="loader1" id="loader11"></span>
+        <button id="check-rhea" style="display: none;" onclick="checkbuttonclicked()">Check Vulnerability</button>
 
     </div>
-   
+
+
+
+
+    <!-- **************************************under-processing********************************************* -->
+
+    <div class="underprocess" id="underprocess" style="display: none;">
+
+        <span class="loader2" id="loader2">Loading</span>
+
+    </div>
 
 
 
 
 
+    <!-- **************************************Dashboard********************************************************* -->
+    <!-- <div class="container mt-5" style="display: none;" id="boxes1">
+       
+        <div class="row justify-content-center" id="boxContainer">
+       
+        </div>
+
+    </div>
 
 
 
 
 
+    <div class="container mt-5" style="display: none;" id="charts">
+        <div class="row justify-content-center">
+            <div class="col-md-6 mb-4">
+                <div id="chart1"></div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div id="chart2"></div>
+            </div>
+            <div class="col-md-12 mb-4">
+                <div id="chart3"></div>
+            </div>
+        </div>
+    </div> -->
+<button id="backbutton" style="display: none;">back</button>
+
+    <div style="display: none;" id="boxes1">
+        <div class="container">
+            <!-- Boxes for Critical, Important, Moderate, and Low Counts -->
+            <div class="row justify-content-center" id="boxContainer">
+                <!-- Boxes will be dynamically added here by the JavaScript code -->
+            </div>
+        </div>
+
+        <div class="container charts" id="charts">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-12 mb-4">
+                    <div id="chart2" class="chart-container"></div>
+                </div>
+                <div class="col-lg-6 col-md-12 mb-4">
+                    <div id="chart1" class="chart-container"></div>
+                </div>
+                <div class="col-md-12 mb-4">
+                    <div id="chart3" class="chart-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- **********************************************Table********************************************************* -->
 
 
 
+    <!-- <li>
+    <a class="btn" id="download-csv">
+        <i class="bi bi-box-arrow-in-left"></i>
+    </a>
+    <span class="innertext" onclick="window.location.href='../Login/login-page.html';"
+        style="cursor: pointer;">LOGIN</span>
+</li> -->
 
+    <!-- <button id="download-csv" style="display: none;" title="Download CSV"><i class="bi bi-filetype-csv"></i></button> -->
+    <!-- Add the loading GIF element -->
+    <!-- <button id="visualize" style="display: none;" title="visualize" onclick="visualizebuttonclicked()" onclick="charted()"><i class="bi bi-clipboard2-data-fill"></i></button> -->
 
+    <div class="result-container">
+        <div id="server-info"></div>
 
-
-
-
-
-
-<!-- **********************************************Table********************************************************* -->
-
-
-     <button id="download-csv" style="display: none;">Download as CSV</button>
-        <!-- Add the loading GIF element -->
-
-       <div class="result-container">
-            <div id="server-info"></div>
-            
-       <table id="rhea-table">
+        <table id="rhea-table">
             <thead>
                 <tr>
                     <th>Rhsa number </th>
@@ -202,31 +261,40 @@
                     <th>Note</th>
                 </tr>
             </thead>
-        <label for="threat-filter" id="threat-filter-label" style="display: none;">Filter by Threat Level:</label>
-            
-<select id="threat-filter" style="display: none;">
-    
-    <option value="all">All</option>
-    <option value="Critical">Critical</option>
-    <option value="Important">Important</option>
-    <option value="Moderate">Moderate</option>
-    <option value="Low">Low</option>
-    <option value="null">null</option>
-    
-</select>
+            <label for="threat-filter" id="threat-filter-label" style="display: none;">Filter by Threat Level:</label>
+
+            <select id="threat-filter" style="display: none;">
+
+                <option value="all">All</option>
+                <option value="Critical">Critical</option>
+                <option value="Important">Important</option>
+                <option value="Moderate">Moderate</option>
+                <option value="Low">Low</option>
+                <option value="null">null</option>
+
+            </select>
+            <div class="button-container">
+                <button id="download-csv" style="display: none;" title="Download CSV"><i
+                        class="bi bi-filetype-csv"></i></button>
+                <button id="visualize" style="display: none;" title="visualize" onclick="visualizebuttonclicked()"
+                    onclick="charted()"><i class="bi bi-clipboard2-data-fill"></i></button>
+            </div>
+
             <tbody id="rhea-table-body"></tbody>
         </table>
-       </div>
+    </div>
 
 
-        <div id="threat-box-container">
-            <div class="threat-box" id="critical-box"></div>
-            <div class="threat-box" id="important-box"></div>
-            <div class="threat-box" id="moderate-box"></div>
-            <div class="threat-box" id="low-box"></div>
-            <div class="threat-box" id="null-box"></div>
-        </div>
-        
+    <div id="threat-box-container">
+        <div class="threat-box" id="critical-box"></div>
+        <div class="threat-box" id="important-box"></div>
+        <div class="threat-box" id="moderate-box"></div>
+        <div class="threat-box" id="low-box"></div>
+        <div class="threat-box" id="null-box"></div>
+    </div>
+    <button id="download-csv" style="display: none;" title="Download CSV"><i class="bi bi-filetype-csv"></i></button>
+    <button id="visualize" style="display: none;" title="visualize" onclick="visualizebuttonclicked()"
+        onclick="charted()"><i class="bi bi-clipboard2-data-fill"></i></button>
     </div>
 
 
@@ -235,9 +303,12 @@
 
 
 
-<!-- *******************************************scripts***************************************************** -->
-    
-    
+    <!-- *******************************************scripts***************************************************** -->
+    <script type="module" src="./dashboard.js"></script>
+
+    <!-- ApexCharts JS -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.27.1/dist/apexcharts.min.js"></script>
+
     <script>
         function showSignup() {
             var signupHead = document.getElementById('signup');
@@ -341,6 +412,11 @@
                 // Update the progress after the signup form is submitted
                 stepCompleted();
             }
+
+            window.visualizebuttonclicked = function () {
+                // Update the progress after the signup form is submitted
+                stepCompleted();
+            }
             window.checkbuttonclicked = function () {
                 // Update the progress after the signup form is submitted
                 stepCompleted();
@@ -359,26 +435,28 @@
 
 
 
-<script>
-    // Create a WebSocket connection
-    const socket = new WebSocket('ws://localhost:3002');
+    <script>
+        // Create a WebSocket connection
+        const socket = new WebSocket('ws://localhost:3002');
 
-    socket.addEventListener('message', (event) => {
-        const message = JSON.parse(event.data);
+        socket.addEventListener('message', (event) => {
+            const message = JSON.parse(event.data);
 
-        if (message.type === 'data-update') {
-            // Update your UI or activate the check-rhea button
-           activateCheckrhsaButton();
+            if (message.type === 'data-update') {
+                // Update your UI or activate the check-rhea button
+                activateCheckrhsaButton();
+            }
+        });
+
+        function activateCheckrhsaButton() {
+            const loading = document.getElementById('loader11');
+            loading.style.display = 'none';
+            const checkRheaButton = document.getElementById('check-rhea');
+            checkRheaButton.style.display = 'block';
         }
-    });
-
-    function activateCheckrhsaButton() {
-        const loading = document.getElementById('loader11');
-        loading.style.display = 'none';
-        const checkRheaButton = document.getElementById('check-rhea');
-        checkRheaButton.style.display = 'block';        
-    }
-</script>
+    </script>
 
 
-<script type="module" src="./dashboard.js"></script>
+</body>
+
+</html>

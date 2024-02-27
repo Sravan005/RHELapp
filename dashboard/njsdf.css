@@ -1,0 +1,704 @@
+
+.dashContent {
+  margin-left: 15%;
+  padding: 8% 15% 8% 0%;
+  display: flex;
+
+}
+
+.dashContent .progress-item.active {
+
+  opacity: 1;
+}
+
+
+
+.dim {
+  /* background-color: #ccc !important;  */
+  color: #555 !important;
+  /* Adjust the dim text color as needed */
+  opacity: 1;
+}
+
+.dashContent ul li.dark .icon,
+.dashContent ul li.dark .text {
+  color: darkgreen;
+  /* Change the dark color as needed */
+}
+
+.dashContent ul {
+  display: flex;
+  margin-top: -8%;
+}
+
+.dashContent ul li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0% 4%;
+}
+
+.dashContent ul li .icon {
+  font-size: 32px;
+  color: rgb(140, 13, 13);
+  margin: 0 60px;
+  /* opacity: 0.5; */
+}
+
+.dashContent ul li .text {
+  font-size: large;
+  font-weight: bold;
+  color: rgb(140, 13, 13);
+  margin-left: 10%;
+  pointer-events: none;
+  /* opacity: 0.5; */
+
+}
+
+.dashContent ul li .progress {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: rgb(140, 13, 13);
+  margin: 13px 0;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  position: relative;
+  /* opacity: 0.5; */
+  z-index: -1;
+}
+
+.dashContent ul li .progress i {
+  color: white;
+  font-size: large;
+}
+
+.progress::after {
+  content: " ";
+  position: absolute;
+  width: 191.5px;
+  height: 8px;
+  background-color: rgb(128, 0, 0);
+  right: 30px;
+}
+
+
+
+.one::after {
+  width: 0;
+  height: 0;
+}
+
+ul li .progress p {
+  font-size: 13px;
+}
+
+
+
+
+
+.headi {
+  text-align: center;
+  margin-left: 0%;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+
+.navigation {
+  position: fixed;
+  top: 25%;
+  background-color: black;
+  width: 60px;
+  height: 28%;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 0.8rem;
+}
+
+.navigation ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.navigation ul li {
+
+  height: 70px;
+}
+
+.navigation ul li a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin-left: -25px;
+}
+
+.navigation ul li a i {
+  color: red;
+  font-size: 200%;
+  padding-right: 5px;
+}
+
+.navigation ul li .innertext {
+  text-decoration: none;
+  font-weight: bolder;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: red;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  left: 4.5%;
+  margin-top: -5px;
+  opacity: 0;
+  pointer-events: none;
+  font-size: larger;
+}
+
+.navigation ul li:hover i {
+  color: red;
+  text-shadow: 0 0 1px red, 0 0 1px red, 0 0 10px red, 0 0 80px red;
+}
+
+.navigation ul li:hover .innertext {
+  opacity: 1;
+  transition: all 0.5s ease;
+  font-weight: bolder;
+}
+
+.navigation ul li .active i {
+  color: red;
+  bottom: 0;
+  border-bottom: 5px solid red;
+  width: 80%;
+  display: inline-block;
+  transition: all 0.3s ease;
+
+}
+
+
+
+
+
+
+
+
+
+
+#signup {
+  background-image: url(/assets/Cloud\ hosting-pana.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 80vh;
+  margin-top: -27%;
+  background-position: right;
+  background-attachment: fixed;
+}
+
+#signup button {
+  width: 70%;
+  display: block;
+  margin-left: 7%;
+  padding: 2%;
+  color: white;
+  background-color: red;
+  border: 2px solid red;
+  border-radius: 5px;
+  font-size: 100%;
+  font-weight: bold;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  cursor: pointer;
+}
+
+.signupform {
+  position: relative;
+  top: 43%;
+  background-color: #F5F5F5;
+  border: 1px solid #F5F5F5;
+  border-radius: 20px;
+  color: black;
+  height: 82%;
+  width: 30%;
+  margin-left: 20%;
+  margin-top: 4%;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.signupform .close {
+  float: right;
+  width: 10%;
+  margin-top: -11%;
+  text-decoration: none;
+  color: red;
+  font-weight: bolder;
+  font-size: xx-large;
+  cursor: pointer;
+}
+
+.signupform h1 {
+  text-align: center;
+  padding: 6% 0 3% 0;
+  font-size: 170%;
+}
+
+.signupcontents {
+  padding: 2%;
+  padding-left: 15%;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.signupcontents label {
+  font-size: large;
+  font-weight: bold;
+  margin-bottom: 1%;
+  font-size: 110%;
+}
+
+.signupcontents input {
+  display: block;
+  width: 85%;
+  padding: 1.5%;
+  border: 2px solid rgb(155, 148, 148);
+  font-size: 95%;
+  border-radius: 3px;
+  background-color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.signupcontents i {
+  position: absolute;
+  top: 41.5px;
+  left: 80%;
+  font-size: larger;
+}
+
+.signupcontents small {
+  font-weight: 500;
+  font-size: 97%;
+  position: absolute;
+}
+
+.signupcontents button {
+  width: 70%;
+  display: block;
+  margin-left: 7%;
+  padding: 2%;
+  color: white;
+  background-color: red;
+  border: 2px solid red;
+  border-radius: 5px;
+  font-size: 100%;
+  font-weight: bold;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  cursor: pointer;
+}
+
+.signupcontents #submit input:hover {
+  letter-spacing: 3px;
+}
+
+.signupcontents .error small {
+  color: red;
+}
+
+.error .signupcontents input {
+  border: 3px solid red;
+}
+
+.error .bi-exclamation-circle-fill {
+  color: red;
+}
+
+
+
+a {
+  text-align: center;
+  text-decoration: none;
+  margin-top: 2%;
+  color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#rhea-table {
+  width: 80%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  display: none;
+  margin-left: auto;
+  /* Align the table to the center */
+  margin-right: auto;
+  display: none;
+  /* Hide the table initially */
+}
+
+.top-heading {
+  position: absolute;
+  top: 80px;
+  /* Adjust this value to set the distance from the top */
+  left: 100px;
+  /* Adjust this value to set the distance from the left */
+  /* Background color for the heading */
+  padding: 20px;
+  /* Add padding to the heading */
+  z-index: 2;
+  /* Ensure the heading stays on top of other elements, including the table */
+}
+
+#rhea-table th,
+#rhea-table td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 12px;
+}
+
+/* #check-rhea {
+display: none;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+padding: 10px; 
+max-width: 150px;
+} */
+
+li {
+  display: flex;
+  align-items: center;
+}
+
+strong {
+  width: 120px;
+  margin-right: 10px;
+  text-align: left;
+  display: inline-block;
+}
+
+#rhea-table th {
+  background-color: #f2f2f2;
+}
+
+#rhea-table-body tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#rhea-table-body tr:hover {
+  background-color: #ddd;
+}
+
+
+
+
+.parent-container {
+  text-align: right;
+  width: 100%;
+}
+
+#result-list {
+  list-style: none;
+  padding: 0;
+  text-align: right;
+  /* Align the text inside the #result-list to the right */
+}
+
+#threat-box-container {
+  display: none;
+  margin-top: 20px;
+}
+
+.threat-box {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 8px 15px;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+#critical-box {
+  background-color: darkred;
+  /* Dark red for important */
+}
+
+#important-box {
+  background-color: red;
+  /* Dark red for important */
+}
+
+#moderate-box {
+  background-color: orange;
+  /* Orange for moderate */
+}
+
+#low-box {
+  background-color: #e67e22;
+  /* Light orange for low */
+}
+
+#null-box {
+  background-color: #796c60;
+  /* Light orange for low */
+
+}
+
+.critical-cell {
+  background-color: Darkred;
+  color: white;
+}
+
+.important-cell {
+  background-color: red;
+  color: white;
+}
+
+.moderate-cell {
+  background-color: orange;
+  color: white;
+}
+
+.low-cell {
+  background-color: #e67e22;
+  color: white;
+}
+
+
+.null-cell {
+  background-color: #8b8076;
+  color: white;
+}
+
+
+#result-list {
+  display: none;
+}
+
+#threat-box-container {
+  display: none;
+}
+
+.result-container {
+  margin-top: -6%;
+  text-align: center;
+}
+
+#rhea-table th:nth-child(1),
+#rhea-table td:nth-child(1) {
+  /* Increase width for Rhsa number column */
+  width: 14%;
+  /* Adjust the width as per your preference */
+}
+
+#rhea-table th:nth-child(2),
+#rhea-table td:nth-child(2) {
+  /* Increase width for Release date column */
+  width: 13%;
+  /* Adjust the width as per your preference */
+}
+
+#rhea-table th:nth-child(3),
+#rhea-table td:nth-child(3) {
+  /* Increase width for Release date column */
+  width: 11%;
+  /* Adjust the width as per your preference */
+}
+
+/* Add styles for the information button */
+
+
+.rhsa-button-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.rhsa-button-container:hover .info-tooltip {
+  display: block;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+}
+
+#rhea-table-body tr:nth-child(even) {
+  background-color: #ffffff;
+  /* White background color for even rows */
+}
+
+#rhea-table-body tr:nth-child(odd) {
+  background-color: #f2f2f2;
+  /* Light gray background color for odd rows */
+}
+
+
+
+
+
+button#download-csv {
+ 
+  padding: 11px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: white;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-left: 86%;
+}
+
+
+
+#download-csv i {
+  font-size: 2rem;
+  font-weight: bolder;
+  color: #b91717d8;
+  
+}
+
+
+button#visualize {
+  cursor: pointer;
+  background-color: white;
+
+}
+
+.button-container {
+  display: flex;
+  /* justify-content: space-between; */
+  /* or any other value based on your preference */
+  align-items: center;
+  /* optional */
+}
+
+#visualize i {
+  font-size: 2rem;
+  font-weight: bolder;
+  color: #b91717d8;
+}
+
+
+
+
+
+
+
+#chart2 {
+  margin-top: -297px;
+  width: 22%;
+  height: 61px;
+  margin-left: 174px;
+  position: absolute;
+}
+
+#chart1 {
+  margin-top: -285px;
+  min-height: none;
+  height: 61px;
+  margin-left: 800px;
+  position: absolute;
+}
+
+#chart3 {
+  margin-top: 364px;
+  padding-top: 68px;
+  margin-left: 300px;
+}
+
+
+
+
+
+/* Set a general style for the container */
+.container {
+  text-align: center;
+}
+
+/* Style for the box container */
+#boxContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 68px;
+  margin-top: -126px;
+}
+
+/* Style for each box */
+.col-md-3 {
+  margin: 10px;
+}
+
+.box {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  /* Adjust the padding as needed */
+  width: 200px;
+  /* Set a fixed width for horizontal rectangles */
+  height: 100px;
+  /* Set a fixed height for horizontal rectangles */
+  transition: transform 0.3s ease;
+  box-sizing: border-box;
+  /* Include padding in the total height */
+}
+
+.box:hover {
+  transform: scale(1.05);
+}
+
+h3 {
+  color: #333;
+  margin-bottom: 5px;
+  /* Optional: Add margin below h3 for spacing */
+  font-size: 1.2em;
+  /* Optional: Adjust font size */
+}
+
+p {
+  color: #666;
+  font-size: 1em;
+  /* Optional: Adjust font size */
+}
+
+/* Box Colors */
+.box.critical {
+  background-color: #a81414cf;
+}
+
+.box.important {
+  background-color: #a814147d;
+}
+
+.box.moderate {
+  background-color: #80808099;
+}
+
+.box.low {
+  background-color: #8080804f;
+}
+
+
+
+
