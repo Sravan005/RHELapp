@@ -18,7 +18,9 @@
       become: yes
   
     - name: Install app dependencies using package.json
-      command: npm install /var/lib/awx/projects/_10__rhel_app/    
+      command: npm install
+      args:
+        chdir: /var/lib/awx/projects/_10__rhel_app/    
       become: yes
  
     - name: Run Node.js app
