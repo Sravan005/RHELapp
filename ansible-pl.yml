@@ -4,12 +4,12 @@
   become: yes
  
   tasks:
-    - name: Update yum package cache
+    - name: Updat yum package cache
       yum:
         update_cache: yes
       become: yes
  
-    - name: Install Node.js and npm
+    - name:  Node.js and npm
       yum:
         name:
           - nodejs
