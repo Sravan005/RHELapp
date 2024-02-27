@@ -4,13 +4,13 @@
   become: yes
  
   tasks:
-    - name: Update apt package cache
-      apt:
+    - name: Update yum package cache
+      yum:
         update_cache: yes
       become: yes
  
     - name: Install Node.js and npm
-      apt:
+      yum:
         name:
           - nodejs
           - npm
