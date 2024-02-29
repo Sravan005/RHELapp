@@ -1,14 +1,23 @@
 ---
-- name: Install and Run Node.js App
+- name: Pull rhel files from Git, run rhel app
   hosts: localhost
   become: yes
- 
+  vars:
+    git_repo_url: "https://github.com/Sravan005/RHELapp.git"
+    rhelapp_project_path: "/var/www/html/rhelportal"
+
   tasks:
-    - name: Updat yum package cache
+    - name: Clone rhelapp Git repository
+      git:
+        repo: "{{ git_repo_url }}"
+        dest: "{{ rhelapp_project_path }}"
+        update: yes
+
+    - name: Update yum package cache
       yum:
         update_cache: yes
       become: yes
- 
+
     - name:  Node.js and npm
       yum:
         name:
@@ -16,14 +25,15 @@
           - npm
         state: present
       become: yes
-  
+
+
     - name: Install app dependencies using package.json
       command: npm install
       args:
-        chdir: /var/lib/awx/projects/_10__rhel_app/    
+        chdir: /var/www/html/rhelportal   
       become: yes
- 
+
     - name: Run Node.js app
-      command: node /var/lib/awx/projects/_10__rhel_app/src/server.mjs 
-      
+      command: node /var/www/html/rhelportal/src/server.mjs       
       become: yes
+
