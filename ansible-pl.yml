@@ -1,6 +1,7 @@
 ---
 - name: Pull rhel files from Git, run rhel app
   hosts: localhost
+  connection: local
   become: yes
   vars:
     git_repo_url: "https://github.com/Sravan005/RHELapp.git"
