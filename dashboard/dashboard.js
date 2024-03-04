@@ -266,7 +266,7 @@ backButton.addEventListener('click', () => {
     };
 
     // Send form data to the server
-    fetch('http://localhost:3001/update-ssh-config', {
+    fetch('http://3.142.152.248:3001/update-ssh-config', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -274,7 +274,7 @@ backButton.addEventListener('click', () => {
       body: JSON.stringify(data)
     })
 
-    fetch('http://localhost:3001/ssh', {
+    fetch('http://3.142.152.248:3001/ssh', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -330,7 +330,7 @@ backButton.addEventListener('click', () => {
     //listItem.textContent = data.output; // Assuming the server response has an 'output' property
     resultList.appendChild(listItem);
 
-    fetch('http://localhost:3001/trigger-robocorp-process', {
+    fetch('http://3.142.152.248:3001/trigger-robocorp-process', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -376,7 +376,7 @@ backButton.addEventListener('click', () => {
     loadingGif.style.display = 'block';
 
     // // Now fetch the updated RHSA numbers
-    fetch('http://localhost:3001/api')
+    fetch('http://3.142.152.248:3001/api')
       .then(response => response.json())
       .then(data => {
         data = Array.isArray(data[0]) ? data.flat() : data;
@@ -396,7 +396,7 @@ backButton.addEventListener('click', () => {
 
         data.forEach(result => {
 
-          const fetchPromise = fetch(`http://localhost:3001/rhea/${result}`)
+          const fetchPromise = fetch(`http://3.142.152.248:3001/rhea/${result}`)
             .then(response => {
               if (!response.ok) {
                 throw new Error(`Error fetching data for ${result}`);
