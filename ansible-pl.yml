@@ -1,7 +1,6 @@
 ---
 - name: Pull rhel files from Git, run rhel app
   hosts: localhost
-  connection: local
   become: yes
   vars:
     git_repo_url: "https://github.com/Sravan005/RHELapp.git"
@@ -13,6 +12,7 @@
         repo: "{{ git_repo_url }}"
         dest: "{{ rhelapp_project_path }}"
         update: yes
+        force: yes
 
     - name: Update yum package cache
       yum:
