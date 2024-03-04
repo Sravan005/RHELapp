@@ -8,7 +8,7 @@ import { Client } from 'ssh2';
 import fetch from 'node-fetch';
 import { product } from './serv.mjs';
 import { log } from 'console';
-import { ansibleExec } from './ansible.mjs';
+// import { ansibleExec } from './ansible.mjs';
 
 const app = express();
 app.use(express.json());
