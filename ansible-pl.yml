@@ -34,7 +34,7 @@
         chdir: /var/www/html/rhelportal   
       become: yes
 
-    - name: Run Node.js app
-      command: node /var/www/html/rhelportal/src/server.mjs       
-      become: yes
+    # - name: Run Node.js app
+    #   command: node /var/www/html/rhelportal/src/server.mjs       
+    #   become: yes
 
