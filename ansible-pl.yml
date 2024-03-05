@@ -4,7 +4,7 @@
   become: yes
   vars:
     git_repo_url: "https://github.com/Sravan005/RHELapp.git"
-    rhelapp_project_path: "/var/www/html/rhelportal"
+    rhelapp_project_path: "/var/www/html"
 
   tasks:
     - name: Clone rhelapp Git repository
@@ -31,7 +31,7 @@
     - name: Install app dependencies using package.json
       command: npm install
       args:
-        chdir: /var/www/html/rhelportal   
+        chdir: /var/www/html   
       become: yes
 
     # - name: Run Node.js app
