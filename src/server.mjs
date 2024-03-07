@@ -274,7 +274,7 @@ app.post('/ssh', (req, res) => {
                         conn.end();
                         res.json({ version, hostname });
                         uipath(extractedVersion);
-                        connectToMongoDB();
+                        // connectToMongoDB();
                     }).on('data', data => {
                         hostname += data.toString();
                     }).stderr.on('data', data => {
