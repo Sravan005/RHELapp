@@ -8,7 +8,7 @@ import { Client } from 'ssh2';
 import fetch from 'node-fetch';
 import { product } from './serv.mjs';
 import { log } from 'console';
-// import { ansibleExec } from './ansible.mjs';
+
 
 const app = express();
 app.use(express.json());
@@ -23,28 +23,28 @@ let collection;
 let newConfig = '';
 
 app.post('/update-ssh-config', (req, res) => {
-    newConfig = req.body; // Assuming the request body contains host, username, and password properties
+    newConfig = req.body; 
     updateSSHConfig(newConfig);
     res.json({ message: 'SSH Config updated successfully' });
 });
 
 let extractedVersion;
 
-async function connectToMongoDB() {
-    try {
-        const url = process.env.MONGO_URL || 'mongodb://127.0.0.1:27017/RHSA';
-        const client = new MongoClient(url);
-        const collectionName = extractedVersion.toString();
-        // Wait for MongoDB container to initialize for 5 seconds (adjust as needed)
-        await new Promise((resolve) => setTimeout(resolve, 5000));
-        await client.connect();
-        console.log('Connected to MongoDB successfully!');
-        const db = client.db('RHSA');
-        collection = db.collection(collectionName);
-    } catch (err) {
-        console.error('Error connecting to MongoDB:', err);
-    }
-}
+// async function connectToMongoDB() {
+//     try {
+//         const url = process.env.MONGO_URL || 'mongodb://127.0.0.1:27017/RHSA';
+//         const client = new MongoClient(url);
+//         const collectionName = extractedVersion.toString();
+        
+//         await new Promise((resolve) => setTimeout(resolve, 5000));
+//         await client.connect();
+//         console.log('Connected to MongoDB successfully!');
+//         const db = client.db('RHSA');
+//         collection = db.collection(collectionName);
+//     } catch (err) {
+//         console.error('Error connecting to MongoDB:', err);
+//     }
+// }
 
 
 
@@ -68,10 +68,6 @@ app.all('/api', (req, res) => {
             console.log('Received data from Robocorp:', requestData);
             const robocorp_numbers = requestData.data.flat(Infinity);
             console.log('Robocorp RHSA numbers:', robocorp_numbers);
-
-
-
-
 
             const robocorp_set = new Set(robocorp_numbers);
             const robocorp_array = [...robocorp_set];

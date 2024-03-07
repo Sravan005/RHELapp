@@ -8,19 +8,7 @@ if (heading) {
 }
 
 
-// const signuphead = document.getElementById('signuphead');
-// if(signuphead){
-//   signuphead.innerHTML = `<h1>Hello <b style="color: red; text-transform: capitalize;">${myVariable}</b>!<br>Enter your VM details</h1>`;
-// }
-
-
-// else {
-//   console.error("Element with id 'heading' not found.");
-// }
-
-
-
-const commonColorsRGB = ['#ff4560' ,'#008ffbd9' ,'#00e396' , '#feb019' ];
+const commonColorsRGB = ['#ff4560', '#008ffbd9', '#00e396', '#feb019'];
 
 let chart1;
 let chart2;
@@ -56,7 +44,7 @@ const options1 = {
     },
   ],
   colors: commonColorsRGB,
-  
+
   chart: {
     type: 'bar',
     width: 750,
@@ -117,7 +105,7 @@ const options2 = {
     text: 'Severity Pie chart',
     align: 'left'
   },
-  
+
   responsive: [
     {
       breakpoint: 480,
@@ -159,8 +147,8 @@ var options3 = {
     data: chart3Data.map(item => item.data.Low)
   }
 
-],
-colors: commonColorsRGB,
+  ],
+  colors: commonColorsRGB,
   chart: {
     type: 'area',
     height: 350,
@@ -180,7 +168,7 @@ colors: commonColorsRGB,
     align: 'left'
   },
 
-//  labels: seriesData3.monthDataSeries1.dates,
+  //  labels: seriesData3.monthDataSeries1.dates,
   xaxis: {
     type: 'category',
     categories: chart3Data.map(item => 'Year ' + item.year),
@@ -220,27 +208,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const backButton = document.getElementById('backbutton');
 
 
-backButton.addEventListener('click', () => {
-  const charts = document.getElementById('charts');
-  charts.style.display = 'none';
+  backButton.addEventListener('click', () => {
+    const charts = document.getElementById('charts');
+    charts.style.display = 'none';
 
-  backButton.style.display = 'none';
+    backButton.style.display = 'none';
 
-  const boxes = document.getElementById('boxes1');
-  boxes.style.display = 'none';
+    const boxes = document.getElementById('boxes1');
+    boxes.style.display = 'none';
 
-  visualizeButton.style.display = 'block';
-  downloadButton.style.display = 'block';
-  document.getElementById('threat-filter-label').style.display = 'inline-block';
-  document.getElementById('threat-filter').style.display = 'inline-block';
+    visualizeButton.style.display = 'block';
+    downloadButton.style.display = 'block';
+    document.getElementById('threat-filter-label').style.display = 'inline-block';
+    document.getElementById('threat-filter').style.display = 'inline-block';
 
-  // Show the threat boxes after setting their content
-  document.getElementById('threat-box-container').style.display = 'block';
-  document.getElementById('rhea-table').style.display = 'table';
+    // Show the threat boxes after setting their content
+    document.getElementById('threat-box-container').style.display = 'block';
+    document.getElementById('rhea-table').style.display = 'table';
 
 
 
-});
+  });
 
 
 
@@ -358,14 +346,6 @@ backButton.addEventListener('click', () => {
     }, 5000);
 
   });
-
-
-
-
-
-
-
-
 
 
 
@@ -647,8 +627,8 @@ backButton.addEventListener('click', () => {
 
 
 
-//chart1
-            
+            //chart1
+
             const seriesData = [
               {
                 name: 'Critical',
@@ -710,27 +690,27 @@ backButton.addEventListener('click', () => {
 
 
             const boxesData = [
-              { type: "Critical", count: CriticalCount},
+              { type: "Critical", count: CriticalCount },
               { type: "Important", count: importantCount },
               { type: "Moderate", count: moderateCount },
               { type: "Low", count: lowCount },
             ];
-          
+
             // Get the container where boxes will be added
             const boxContainer = document.getElementById("boxContainer");
-          
+
             // Loop through the data and create boxes dynamically
             boxesData.forEach((data) => {
               const boxWrapper = document.createElement("div");
               boxWrapper.className = "col-md-3 mb-4";
-          
+
               const box = document.createElement("div");
               box.className = `box ${data.type.toLowerCase()}`;
               box.innerHTML = `
                 <h3>${data.type}</h3>
                 <p>Count: ${data.count}</p>
               `;
-          
+
               boxWrapper.appendChild(box);
               boxContainer.appendChild(boxWrapper);
             });
