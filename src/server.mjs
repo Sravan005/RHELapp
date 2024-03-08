@@ -22,11 +22,11 @@ let collection;
 
 let newConfig = '';
 
-app.post('/update-ssh-config', (req, res) => {
-    newConfig = req.body; 
-    updateSSHConfig(newConfig);
-    res.json({ message: 'SSH Config updated successfully' });
-});
+// app.post('/update-ssh-config', (req, res) => {
+//     newConfig = req.body;
+//     updateSSHConfig(newConfig);
+//     res.json({ message: 'SSH Config updated successfully' });
+// });
 
 let extractedVersion;
 
@@ -35,7 +35,7 @@ let extractedVersion;
 //         const url = process.env.MONGO_URL || 'mongodb://127.0.0.1:27017/RHSA';
 //         const client = new MongoClient(url);
 //         const collectionName = extractedVersion.toString();
-        
+
 //         await new Promise((resolve) => setTimeout(resolve, 5000));
 //         await client.connect();
 //         console.log('Connected to MongoDB successfully!');
@@ -224,7 +224,11 @@ let username = '';
 
 
 app.use(cors());
+
 app.post('/ssh', (req, res) => {
+    newConfig = req.body;
+    updateSSHConfig(newConfig);
+
     const conn = new Client();
 
     conn.on('ready', () => {
