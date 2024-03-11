@@ -1,5 +1,5 @@
-.logo{
-    font-weight:bold;
+.logo {
+    font-weight: bold;
     font-size: 180%;
     color: black;
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -8,17 +8,18 @@
     width: 90%;
     padding-top: 10%;
 }
+
 .logo i {
     color: rgb(156, 12, 12);
     font-size: 110%;
     font-weight: bold;
-    padding-left: 10%;   
+    padding-left: 10%;
     margin-top: 1%;
     position: absolute;
 
 }
 
-.logo span{
+.logo span {
     color: black;
     font-size: 120%;
     margin-left: 15%;
@@ -26,11 +27,11 @@
     width: 50%;
 }
 
-.logo h3{
-    color:  rgb(156, 12, 12);
+.logo h3 {
+    color: rgb(156, 12, 12);
     font-size: 90%;
-    font-weight: bold;    
-    left:40%;
+    font-weight: bold;
+    left: 40%;
     margin-top: 20%;
     margin-left: 0px;
     margin-bottom: 10%;
@@ -42,21 +43,22 @@
 
 
 
-.logo h6{
-    color: black; 
-    font-size: 60% ;
+.logo h6 {
+    color: black;
+    font-size: 60%;
     /* margin-top: 10%;
     padding-bottom: 20%; */
     text-align: justify;
-/* border: 2px solid black; */
-margin: 0 13% 20% 0;
+    /* border: 2px solid black; */
+    margin: 0 13% 20% 0;
 
 }
 
 
 .btn1 {
-    background-color: rgb(190, 85, 85); /* Green */
-    
+    background-color: rgb(190, 85, 85);
+    /* Green */
+
     border: none;
     color: white;
     padding: 15px 32px;
@@ -67,7 +69,8 @@ margin: 0 13% 20% 0;
     margin-top: 30%;
     margin-left: 27%;
     cursor: pointer;
-  }
+}
+
 .logo h2 {
     font-size: 2rem;
     color: #ca3b17;
@@ -76,10 +79,11 @@ margin: 0 13% 20% 0;
     letter-spacing: 1px;
     text-align: center;
     /* Start with zero opacity */
-    transition: opacity 0.5s ease-in-out; /* Add a transition effect on opacity */
+    transition: opacity 0.5s ease-in-out;
+    /* Add a transition effect on opacity */
 }
 
-.logo .bi-arrow-right-circle-fill{
+.logo .bi-arrow-right-circle-fill {
     color: rgb(156, 12, 12);
     font-size: 150%;
     cursor: pointer;
@@ -89,31 +93,34 @@ margin: 0 13% 20% 0;
 }
 
 
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
 }
 
-.home{
+.home {
     /* margin-top: -5%; */
-    background-image:url('/assets/Server-.png');
+    background-image: url('/assets/Server-.png');
     /* z-index: 100; */
-    background-color:beige;
-    
+    background-color: beige;
+
     background-attachment: fixed;
     background-size: 50%;
     background-repeat: no-repeat;
     height: 100vh;
     background-position: left;
-    
-    
+
+
 }
 
 
 .right-half {
     background-color: white;
-    height: 100vh; /* Adjust the height as needed */
-    width: 50%; /* Adjust the width to cover the right half */
+    height: 100vh;
+    /* Adjust the height as needed */
+    width: 50%;
+    /* Adjust the width to cover the right half */
     position: fixed;
     top: 0;
     right: 0;
@@ -128,16 +135,18 @@ body, html {
 
 
 
-     
 
-.right-half ul{
+
+.right-half ul {
     list-style: none;
     margin-top: 30px;
 }
-.right-half ul li{
+
+.right-half ul li {
     height: 70px;
 }
-.right-half ul li a{
+
+.right-half ul li a {
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -145,16 +154,16 @@ body, html {
 }
 
 
-.right-half ul li a i{
+.right-half ul li a i {
     color: red;
     font-size: 20%;
     padding-right: 5px;
 }
 
-.right-half ul li .innertext{
+.right-half ul li .innertext {
     text-decoration: none;
     font-weight: bolder;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";    
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     color: rgb(164, 153, 153);
     letter-spacing: 1px;
     display: flex;
@@ -167,21 +176,21 @@ body, html {
     font-size: 90%;
 }
 
-.right-half ul li:hover .innertext{
+.right-half ul li:hover .innertext {
     opacity: 1;
     transition: all 0.5s ease;
     font-weight: bolder;
     /* padding-left: 50%; */
 }
 
-.right-half ul li .active i{
+.right-half ul li .active i {
     color: red;
     bottom: 0;
-    border-bottom:5px solid red;
+    border-bottom: 5px solid red;
     width: 80%;
     display: inline-block;
     transition: all 0.3s ease;
-    
+
 }
 
 
@@ -215,8 +224,8 @@ body, html {
 
 
 
-        
-.navigation{
+
+.navigation {
     position: fixed;
     top: 25%;
     background-color: black;
@@ -225,30 +234,34 @@ body, html {
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 0.8rem;
 }
-.navigation ul{
+
+.navigation ul {
     list-style: none;
     margin-top: 30px;
 }
-.navigation ul li{
+
+.navigation ul li {
 
     height: 70px;
 }
-.navigation ul li a{
+
+.navigation ul li a {
     text-decoration: none;
     display: flex;
     align-items: center;
     margin-left: -25px;
 }
-.navigation ul li a i{
+
+.navigation ul li a i {
     color: red;
     font-size: 200%;
     padding-right: 5px;
 }
 
-.navigation ul li .innertext{
+.navigation ul li .innertext {
     text-decoration: none;
     font-weight: bolder;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";    
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     color: red;
     letter-spacing: 1px;
     display: flex;
@@ -260,22 +273,24 @@ body, html {
     pointer-events: none;
     font-size: larger;
 }
-.navigation ul li:hover i{
+
+.navigation ul li:hover i {
     color: red;
-    text-shadow:0 0 10px red,0 0 10px red,0 0 10px red,0 0 80px red;
+    text-shadow: 0 0 10px red, 0 0 10px red, 0 0 10px red, 0 0 80px red;
 }
-.navigation ul li:hover .innertext{
+
+.navigation ul li:hover .innertext {
     opacity: 1;
     transition: all 0.5s ease;
     font-weight: bolder;
 }
 
-.navigation ul li .active i{
+.navigation ul li .active i {
     color: red;
     bottom: 0;
-    border-bottom:5px solid red;
+    border-bottom: 5px solid red;
     width: 80%;
     display: inline-block;
     transition: all 0.3s ease;
-    
+
 }

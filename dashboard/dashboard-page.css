@@ -491,7 +491,7 @@ html {
     margin-top: -5px;
     opacity: 0;
     pointer-events: none;
-    
+
     font-size: larger;
 }
 
@@ -525,10 +525,10 @@ html {
 
 
 #signup {
-    
+
     display: flex;
     flex-direction: row;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     height: 60vh;
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -537,7 +537,7 @@ html {
 .signup-container {
     display: flex;
     flex-direction: row;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     margin-left: 20%;
     width: 70%;
@@ -551,7 +551,7 @@ html {
     border: 1px solid #F5F5F5;
     border-radius: 20px;
     color: black;
-    width: 35%; 
+    width: 35%;
     margin-right: 20px;
 
 }
@@ -565,9 +565,7 @@ html {
     background-position: center;
     /* background-attachment: fixed; */
     height: 100%;
-    width:100%
-    
-    
+    width: 100%
 }
 
 .signupcontents {
@@ -592,8 +590,9 @@ html {
     border-radius: 3px;
     background-color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-top:20px;
+    margin-top: 20px;
 }
+
 .signupform h1 {
     text-align: center;
     padding: 3% 0 3% 0;
@@ -613,7 +612,7 @@ html {
     font-weight: bold;
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     cursor: pointer;
-    
+
 }
 
 .signupcontents #submit input:hover {
@@ -874,7 +873,7 @@ strong {
 
 
 button#download-csv {
-   
+
     padding: 11px 18px;
     font-size: 16px;
     cursor: pointer;
@@ -892,7 +891,7 @@ button#download-csv {
     font-size: 2rem;
     font-weight: bolder;
     color: #b91717d8;
-    
+
 }
 
 
@@ -920,7 +919,7 @@ button#visualize {
 
 
 
-#chart1{
+#chart1 {
     margin-left: 12%;
 }
 
@@ -929,56 +928,59 @@ button#visualize {
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
-  }
-  
-  .charts{
+}
+
+.charts {
     margin-top: 3%;
-  }
-  
-  .row {
+}
+
+.row {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  }
-  
-  .col-md-12,
-  .col-lg-6 {
+}
+
+.col-md-12,
+.col-lg-6 {
     width: 100%;
     box-sizing: border-box;
     margin-bottom: 20px;
-  }
-  
-  @media (min-width: 992px) {
-    .col-md-12 {
-      width: 100%;
-    }
-  
-    .col-lg-6 {
-      width: 50%;
-    }
-  }
-  
+}
 
-#threat-sort-arrow{
+@media (min-width: 992px) {
+    .col-md-12 {
+        width: 100%;
+    }
+
+    .col-lg-6 {
+        width: 50%;
+    }
+}
+
+
+#threat-sort-arrow {
     cursor: pointer;
 }
 
 
-  .chart-container {
+.chart-container {
     width: 62%;
-    height: 300px; /* Adjust the height as needed */
+    height: 300px;
+    /* Adjust the height as needed */
     margin-top: 2%;
-    border: none; /* Remove the border */
+    border: none;
+    /* Remove the border */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: transparent; /* Remove background color */
-  }
-  
-  #chart3{
+    background-color: transparent;
+    /* Remove background color */
+}
+
+#chart3 {
     margin-left: 19%;
     margin-top: 5%;
-  }
+}
 
 
 
@@ -1033,37 +1035,32 @@ p {
     /* Optional: Adjust font size */
 }
 
-/* Box Colors */
-/* Box Colors */
 
-
-
-/* const commonColorsRGB = ['#ff4560' ,'#008ffbd9' ,'#00e396' , '#feb019' ]; */
 .box.critical {
     background-color: #ff4560;
-  }
-  
-  .box.important {
+}
+
+.box.important {
     background-color: #008ffbd9;
-    
-  }
-  
-  .box.moderate {
+
+}
+
+.box.moderate {
     background-color: #00e396;
-    
-  }
-  
-  .box.low {
+
+}
+
+.box.low {
     background-color: #feb019;
-    
-  }
+
+}
 
 
 
 
 
 
-  #backbutton {
+#backbutton {
     background-color: #a81414cf;
     border: none;
     color: white;
@@ -1075,7 +1072,127 @@ p {
     margin: 4px 2px;
     cursor: pointer;
     margin-left: 150px;
-  }
+}
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.error-container h4 {
+    margin-top: 5%;
+    margin-bottom: 0%;
+    padding-left: 25%;
+    font-size: 1.5rem;
+    /* 100% is equivalent to 1rem */
+    font-weight: bold;
+    color: rgb(140, 13, 13);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.error-container {
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    flex-direction: column;
+
+    margin: -5% 0 0 35%;
+    max-width: 30%;
+    font-size: 1rem;
+    /* 100% is equivalent to 1rem */
+    font-weight: bold;
+    color: rgb(140, 13, 13);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.error-container .outer {
+    background-color: white;
+    /* width: 60%; */
+    height: 80%;
+    margin-top: -50px;
+    border-radius: 25px;
+    padding: 1%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.error-container .outer:hover {
+    background-color: #f5f5f5;
+    /* Change the hover background color as needed */
+}
+
+.error-container button {
+
+    width: 40%;
+    display: block;
+    margin-left: 25%;
+    margin-top: 20%;
+    padding: 2%;
+    color: white;
+    background-color: red;
+    border: 2px solid red;
+    border-radius: 5px;
+    font-size: 100%;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    cursor: pointer;
+}
+
+
+
+
+.error-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    /* Adjust as needed */
+}
+
+.error-container th,
+.error-container td {
+    text-align: left;
+    padding: 10px;
+}
+
+.error-container th {
+    width: 30%;
+    text-align: right;
+    padding-right: 10px;
+    font-weight: normal;
+}
+
+.error-container td span {
+    display: block;
+    font-weight: bold;
+}
+
+/* Add a hover effect */
+
+
+/* Add transitions for a smoother effect */
+.error-container {
+    transition: background-color 0.3s ease-in-out;
+    height: 300px;
+    margin-top: 3%;
+
+}

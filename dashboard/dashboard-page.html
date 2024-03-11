@@ -108,7 +108,7 @@
                 <form id="ssh-config-form" onsubmit="signupFormSubmitted(); return false;">
                     <div id="serverdetails">
                         <div class="signuphead" id="signuphead">
-                            <h1 >Fill your server Details</h1>
+                            <h1>Fill your server Details</h1>
                         </div>
                         <div class="signupcontents">
                             <label>IP Address<b style="color: red;">*</b></label>
@@ -161,9 +161,16 @@
             <ul id="result-list" style="list-style-type: none;"></ul>
         </div>
 
-        <span class="loader1" id="loader11"></span>
+        <span class="loader1" id="loader11" style="display: none;"></span>
         <button id="check-rhea" style="display: none;" onclick="checkbuttonclicked()">Check Vulnerability</button>
 
+    </div>
+
+    <div id="error-container">
+        <div class="outer">
+
+
+        </div>
     </div>
 
 
@@ -182,32 +189,8 @@
 
 
     <!-- **************************************Dashboard********************************************************* -->
-    <!-- <div class="container mt-5" style="display: none;" id="boxes1">
-       
-        <div class="row justify-content-center" id="boxContainer">
-       
-        </div>
 
-    </div>
-
-
-
-
-
-    <div class="container mt-5" style="display: none;" id="charts">
-        <div class="row justify-content-center">
-            <div class="col-md-6 mb-4">
-                <div id="chart1"></div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div id="chart2"></div>
-            </div>
-            <div class="col-md-12 mb-4">
-                <div id="chart3"></div>
-            </div>
-        </div>
-    </div> -->
-<button id="backbutton" style="display: none;">back</button>
+    <button id="backbutton" style="display: none;">back</button>
 
     <div style="display: none;" id="boxes1">
         <div class="container">
@@ -237,17 +220,6 @@
 
 
 
-    <!-- <li>
-    <a class="btn" id="download-csv">
-        <i class="bi bi-box-arrow-in-left"></i>
-    </a>
-    <span class="innertext" onclick="window.location.href='../Login/login-page.html';"
-        style="cursor: pointer;">LOGIN</span>
-</li> -->
-
-    <!-- <button id="download-csv" style="display: none;" title="Download CSV"><i class="bi bi-filetype-csv"></i></button> -->
-    <!-- Add the loading GIF element -->
-    <!-- <button id="visualize" style="display: none;" title="visualize" onclick="visualizebuttonclicked()" onclick="charted()"><i class="bi bi-clipboard2-data-fill"></i></button> -->
 
     <div class="result-container">
         <div id="server-info"></div>
@@ -437,7 +409,7 @@
 
     <script>
         // Create a WebSocket connection
-        const socket = new WebSocket('ws://3.136.108.152:3002');
+        const socket = new WebSocket('ws://localhost:3002');
 
         socket.addEventListener('message', (event) => {
             const message = JSON.parse(event.data);

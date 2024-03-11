@@ -235,13 +235,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   sshconfigform.addEventListener('submit', function (event) {
 
-
     event.preventDefault();
     preloader.style.display = 'block';
     const host = document.getElementById('host').value;
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
-
     const selectedButton = 'RHEL'
     const data = {
       host: host,
@@ -249,17 +247,11 @@ document.addEventListener('DOMContentLoaded', () => {
       password: password,
       selectedButton: selectedButton
     };
+    const sshConfigContainer = document.getElementById('signup');
+    sshConfigContainer.style.display = 'none';
 
-    // Send form data to the server
-    // fetch('http://3.136.108.152:3001/update-ssh-config', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify(data)
-    // })
 
-    fetch('http://3.136.108.152:3001/ssh', {
+    fetch('http://localhost:3001/ssh', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -275,20 +267,66 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .then(data => {
         console.log('Success:', data);
-
         document.getElementById("version").textContent = `${data.version}`;
-
         document.getElementById("hostname").textContent = `${data.hostname}`;
+
+        preloader.style.display = 'none';
+        document.getElementById('osdetails').style.display = 'block'
+        resultList.style.display = 'block';
+        document.getElementById('results-heading').style.display = 'block';
+        document.getElementById('loader11').style.display = 'block';
+
+
+
+        fetch('http://localhost:3001/trigger-robocorp-process', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({}), // Add your data to be sent in the body if needed
+        })
+
+          .then(response => response.json())
+          .then(postResponse => {
+            console.log('POST Request Success:', postResponse);
+          });
 
       })
 
+      .catch(error => {
+
+        console.log('Error:ra bro', error.message);
+        document.getElementById('osdetails').style.display = 'block'
+        resultList.style.display = 'block';
+        document.getElementById('results-heading').style.display = 'block';
+        preloader.style.display = 'none';
+
+
+
+
+        resultList.innerHTML = ''; // Clear previous results
+        const listItem = document.createElement('li');
+        listItem.className = 'server-details'; // Add a CSS class to the listItem
+
+        listItem.innerHTML = `
+        <table style="width: 100%; height: 100%; border-collapse: collapse;">
+            <tr>
+                <td style="text-align: center; vertical-align: middle;"><span>Unable to authenticate</span></td>
+            </tr>
+            <tr>
+                <td style="text-align: center; vertical-align: middle;"><span>Try again later</span></td>
+            </tr>
+        </table>
+    `;
+        //listItem.textContent = data.output; // Assuming the server response has an 'output' property
+        resultList.appendChild(listItem);
+      });
 
     const serverInfo = {
       serverName: data.hostname,
       ipAddress: host,
       versionInfo: data.version
     };
-
 
     resultList.innerHTML = ''; // Clear previous results
     const listItem = document.createElement('li');
@@ -311,38 +349,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     </table>
                   `;
 
-
     //listItem.textContent = data.output; // Assuming the server response has an 'output' property
     resultList.appendChild(listItem);
 
-    fetch('http://3.136.108.152:3001/trigger-robocorp-process', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({}), // Add your data to be sent in the body if needed
-    })
-
-      .then(response => response.json())
-      .then(postResponse => {
-        console.log('POST Request Success:', postResponse);
-      })
-
-    // Show the "Check RHEA" button after clicking on a server button
-
-
-    const sshConfigContainer = document.getElementById('signup');
-    sshConfigContainer.style.display = 'none';
-
-    setTimeout(() => {
-      preloader.style.display = 'none';
-      document.getElementById('osdetails').style.display = 'block'
-      resultList.style.display = 'block';
-      document.getElementById('results-heading').style.display = 'block';
-
-    }, 5000);
-
   });
+
+
+
 
 
 
@@ -353,7 +366,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadingGif.style.display = 'block';
 
     // // Now fetch the updated RHSA numbers
-    fetch('http://3.136.108.152:3001/api')
+    fetch('http://localhost:3001/api')
       .then(response => response.json())
       .then(data => {
         data = Array.isArray(data[0]) ? data.flat() : data;
@@ -373,7 +386,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         data.forEach(result => {
 
-          const fetchPromise = fetch(`http://3.136.108.152:3001/rhea/${result}`)
+          const fetchPromise = fetch(`http://localhost:3001/rhea/${result}`)
             .then(response => {
               if (!response.ok) {
                 throw new Error(`Error fetching data for ${result}`);

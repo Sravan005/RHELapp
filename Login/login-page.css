@@ -1,5 +1,5 @@
-#login{
-    background-image:url('../assets/loginPage.png');
+#login {
+    background-image: url('../assets/loginPage.png');
     background-size: contain;
     background-repeat: no-repeat;
     height: 90vh;
@@ -7,7 +7,8 @@
 
 
 }
-.loginform{
+
+.loginform {
     position: relative;
     top: 20%;
     background-color: #F5F5F5;
@@ -15,12 +16,13 @@
     border-radius: 10px;
     color: black;
     height: 74%;
-        /* background-color: rgba(var(--d87,255,255,255),1); */
+    /* background-color: rgba(var(--d87,255,255,255),1); */
     width: 30%;
     margin-left: 25%;
-    font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
-.loginform .close{
+
+.loginform .close {
     float: right;
     width: 9%;
     margin-top: -16%;
@@ -30,26 +32,29 @@
     font-size: xx-large;
     cursor: pointer;
 }
-.loginform h1{
+
+.loginform h1 {
     text-align: center;
     padding: 5% 0 8% 0;
     font-size: 180%;
 }
 
-.logincontents{
+.logincontents {
     padding: 2%;
     padding-left: 15%;
     position: relative;
     padding-bottom: 30px;
 }
-.logincontents label{
+
+.logincontents label {
     font-size: large;
     font-weight: bold;
     display: inline-block;
     margin-bottom: 2%;
     font-size: 110%;
 }
-.logincontents input{
+
+.logincontents input {
     display: block;
     width: 85%;
     padding: 1.5%;
@@ -57,58 +62,64 @@
     font-size: 100%;
     border-radius: 3px;
     background-color: whitesmoke;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.error .bi-exclamation-circle-fill{
+.error .bi-exclamation-circle-fill {
     color: red;
-} 
-.error small{
+}
+
+.error small {
     color: red;
-}   
-.logincontents i{
+}
+
+.logincontents i {
     position: absolute;
     top: 52px;
-    left:80%;
+    left: 80%;
     font-size: 105%;
 }
-.logincontents small{
-    font-weight:bold;
+
+.logincontents small {
+    font-weight: bold;
     font-size: 100%;
     position: absolute;
 }
-.logincontents button{
+
+.logincontents button {
     width: 70%;
     display: block;
     margin-left: 7%;
     padding: 2%;
-    color:white;
+    color: white;
     /*background-color: rgb(243, 52, 141);*/
     background-color: red;
     border: 2px solid red;
     border-radius: 5px;
     font-size: 100%;
-    font-weight:bold;
+    font-weight: bold;
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     cursor: pointer;
 }
 
 
-.signupWant{
+.signupWant {
     text-align: center;
 }
-.signupWant span{
+
+.signupWant span {
     font-size: large;
     font-weight: bold;
 }
-.signupWant button{
+
+.signupWant button {
     position: relative;
     /* left: 28%; */
     padding: 10px;
     text-decoration: none;
     border: 2px solid red;
     color: white;
-    font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     /* letter-spacing: 1px; */
     font-weight: bold;
     width: 20%;
@@ -118,12 +129,13 @@
     background-color: red;
     font-size: medium;
 }
-.signupWant button:hover{
+
+.signupWant button:hover {
     cursor: pointer;
 }
 
 
-a{
+a {
     text-align: center;
     text-decoration: none;
     margin-top: 2%;
@@ -206,21 +218,23 @@ a{
     cursor: pointer;
 }
 
-.micros{
+.micros {
     text-align: center;
 }
-.micros span{
+
+.micros span {
     font-size: large;
     font-weight: bold;
 }
-.micros button{
+
+.micros button {
     position: relative;
     /* left: 28%; */
     padding: 10px;
     text-decoration: none;
     border: 2px solid red;
     color: white;
-    font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     /* letter-spacing: 1px; */
     font-weight: bold;
     width: 20%;
@@ -230,21 +244,22 @@ a{
     background-color: red;
     font-size: medium;
 }
-.micros button:hover{
+
+.micros button:hover {
     cursor: pointer;
 
 }
 
 
 
-.micros svg{
+.micros svg {
     color: rgb(37, 104, 163);
     position: absolute;
     margin-top: 2%;
-    margin-left:-2%;
+    margin-left: -2%;
     font-weight: 100%;
     font-size: 30px;
 
-                      
+
 
 }

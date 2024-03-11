@@ -49,68 +49,68 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (isVerified) {
         createUserWithEmailAndPassword(auth, semail, spassword)
-        .then((userCredential) => {
-          const user = userCredential.user;
-          const userRef = doc(db, "users/" + user.uid);   
-          const popup2 = document.getElementById("popup2");
-          const closeButton2 = popup2.querySelector(".close-popup2");
-        
-         
-          const popupContent2 = popup2.querySelector(".popup-content2");
-        
-          popupContent2.innerHTML = `
+          .then((userCredential) => {
+            const user = userCredential.user;
+            const userRef = doc(db, "users/" + user.uid);
+            const popup2 = document.getElementById("popup2");
+            const closeButton2 = popup2.querySelector(".close-popup2");
+
+
+            const popupContent2 = popup2.querySelector(".popup-content2");
+
+            popupContent2.innerHTML = `
           <span class="close-popup2">&times;</span>
           <p>Account Registered!</p>
         `;
-        popup2.style.display = "block";
-          closeButton2.addEventListener("click", function() {
-            popup2.style.display = "none";
-        });      
-          setDoc(userRef, {
-            email: semail,
-            name: displayName
-          }).then(() => {
-            console.log("Data successfully written:", userRef);
-            // alert("Success! Account created." + displayName);
-            redirectToAnotherPage();
-          }).catch((error) => {
-            console.error("Error writing data:", error);
-            window.alert("Error occurred. Try again.");
-          });
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          const popup = document.getElementById("popup");
-          const popupContent = popup.querySelector(".popup-content");
-          
-          const errorCodeSpan = document.getElementById("errorCode");
-          const errorMessageSpan = document.getElementById("errorMessage");
-          
-          
-          popupContent.innerHTML = `
+            popup2.style.display = "block";
+            closeButton2.addEventListener("click", function () {
+              popup2.style.display = "none";
+            });
+            setDoc(userRef, {
+              email: semail,
+              name: displayName
+            }).then(() => {
+              console.log("Data successfully written:", userRef);
+              // alert("Success! Account created." + displayName);
+              redirectToAnotherPage();
+            }).catch((error) => {
+              console.error("Error writing data:", error);
+              window.alert("Error occurred. Try again.");
+            });
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            const popup = document.getElementById("popup");
+            const popupContent = popup.querySelector(".popup-content");
+
+            const errorCodeSpan = document.getElementById("errorCode");
+            const errorMessageSpan = document.getElementById("errorMessage");
+
+
+            popupContent.innerHTML = `
               <span class="close-popup">&times;</span>
               <p> ${errorCode}</p>
               <p>${errorMessage}</p>
           `;
-          
-          // Display the popup
-          popup.style.display = "block";
-          
-          // Close the popup when the close button is clicked
-          const closeButton = popup.querySelector(".close-popup");
-          
-          closeButton.addEventListener("click", function() {
-          popup.style.display = "none";
+
+            // Display the popup
+            popup.style.display = "block";
+
+            // Close the popup when the close button is clicked
+            const closeButton = popup.querySelector(".close-popup");
+
+            closeButton.addEventListener("click", function () {
+              popup.style.display = "none";
+            });
           });
-        });
-    }
-  });
-}
+      }
+    });
+  }
 });
 
 function redirectToAnotherPage() {
-window.location.href = '/Login/login-page.html';
+  window.location.href = '/Login/login-page.html';
 }
 
 

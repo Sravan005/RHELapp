@@ -1,8 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
-import * as Swal from "https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js";
-import { getFirestore, setDoc, doc,getDoc } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js';
+import { getFirestore, setDoc, doc, getDoc } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js';
 
 
 const firebaseConfig = {
@@ -20,91 +19,83 @@ const analytics = getAnalytics(app);
 const auth = getAuth(app);
 
 
-
 export var myVariable = "";
 
 const eInput = document.getElementById("email-login");
 const pInput = document.getElementById("password-login");
 const loginbtn = document.getElementById("login-btn");
 
-var lemail,lpassword;
+var lemail, lpassword;
 
-if(loginbtn){
-loginbtn.addEventListener("click", function(event) {
-  event.preventDefault()
-  const popup2 = document.getElementById("popup2");
-  const closeButton2 = popup2.querySelector(".close-popup2");
+if (loginbtn) {
+  loginbtn.addEventListener("click", function (event) {
+    event.preventDefault()
+    const popup2 = document.getElementById("popup2");
+    const closeButton2 = popup2.querySelector(".close-popup2");
+    const popupContent2 = popup2.querySelector(".popup-content2");
 
- 
-  const popupContent2 = popup2.querySelector(".popup-content2");
-
-  popupContent2.innerHTML = `
+    popupContent2.innerHTML = `
   <span class="close-popup2">&times;</span>
   <p>Login successful</p>
 `;
-popup2.style.display = "block";
-  closeButton2.addEventListener("click", function() {
-    popup2.style.display = "none";
-});
-
-  lemail = eInput.value;
-  lpassword = pInput.value;
-  signInWithEmailAndPassword(auth, lemail, lpassword)
-  .then(async (userCredential) => {
-    const user = userCredential.user;
-    const db = getFirestore(app);
-    const userDocRef = doc(db, "users", user.uid); // Update the path to "users"
-    const userDoc = await getDoc(userDocRef);
-    if (userDoc.exists()) {
-
-      const userName = userDoc.data().name;
-      myVariable = userName;
-      localStorage.setItem('myVariable', userName);
-      console.log("Username:", userName);
-     
-      redirectToAnotherPage();
-    } else {
-      alert("User doesn't exist");
+    popup2.style.display = "block";
+    closeButton2.addEventListener("click", function () {
       popup2.style.display = "none";
-    }
-  })
-  .catch((error) => {
-    popup2.style.display = "none";
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    const popup = document.getElementById("popup");
-    const popupContent = popup.querySelector(".popup-content");
-    
-    const errorCodeSpan = document.getElementById("errorCode");
-    const errorMessageSpan = document.getElementById("errorMessage");
-    
-    // Update popup content with error details
+    });
 
-    
-    // Update popup content with error details
-    popupContent.innerHTML = `
+    lemail = eInput.value;
+    lpassword = pInput.value;
+    signInWithEmailAndPassword(auth, lemail, lpassword)
+      .then(async (userCredential) => {
+        const user = userCredential.user;
+        const db = getFirestore(app);
+        const userDocRef = doc(db, "users", user.uid); // Update the path to "users"
+        const userDoc = await getDoc(userDocRef);
+        if (userDoc.exists()) {
+
+          const userName = userDoc.data().name;
+          myVariable = userName;
+          localStorage.setItem('myVariable', userName);
+          console.log("Username:", userName);
+
+          redirectToAnotherPage();
+        } else {
+          alert("User doesn't exist");
+          popup2.style.display = "none";
+        }
+      })
+      .catch((error) => {
+        popup2.style.display = "none";
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        const popup = document.getElementById("popup");
+        const popupContent = popup.querySelector(".popup-content");
+
+
+        // Update popup content with error details
+        popupContent.innerHTML = `
         <span class="close-popup">&times;</span>
         <p>Error Code: ${errorCode}</p>
         <p>Error Message: ${errorMessage}</p>
     `;
-    
-    // Display the popup
-    popup.style.display = "block";
-    
-    // Close the popup when the close button is clicked
-    const closeButton = popup.querySelector(".close-popup");
 
-closeButton.addEventListener("click", function() {
-  popup.style.display = "none";
-});
+        // Display the popup
+        popup.style.display = "block";
 
-  });
+        // Close the popup when the close button is clicked
+        const closeButton = popup.querySelector(".close-popup");
+
+        closeButton.addEventListener("click", function () {
+          popup.style.display = "none";
+        });
+
+      });
   });
 }
 
-  function redirectToAnotherPage() {
-    window.location.href = '../dashboard/dashboard-page.html';
+function redirectToAnotherPage() {
+  window.location.href = '../dashboard/dashboard-page.html';
 
-  }
+}
 
 

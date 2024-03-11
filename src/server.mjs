@@ -22,11 +22,7 @@ let collection;
 
 let newConfig = '';
 
-// app.post('/update-ssh-config', (req, res) => {
-//     newConfig = req.body;
-//     updateSSHConfig(newConfig);
-//     res.json({ message: 'SSH Config updated successfully' });
-// });
+
 
 let extractedVersion;
 
