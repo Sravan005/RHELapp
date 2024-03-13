@@ -1,3 +1,11 @@
+if(sessionStorage.getItem("auth") === "false" || sessionStorage.getItem("auth") === null) {
+  window.location.href = "../Login/login-page.html";
+}
+
+
+
+
+
 const myVariable = localStorage.getItem('myVariable');
 const heading = document.getElementById('headi');
 if (heading) {

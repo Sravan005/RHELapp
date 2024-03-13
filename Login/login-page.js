@@ -57,9 +57,10 @@ if (loginbtn) {
           myVariable = userName;
           localStorage.setItem('myVariable', userName);
           console.log("Username:", userName);
-
+          sessionStorage.setItem("auth", "true");
           redirectToAnotherPage();
         } else {
+          sessionStorage.setItem("auth", "false");
           alert("User doesn't exist");
           popup2.style.display = "none";
         }
