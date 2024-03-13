@@ -38,3 +38,4 @@
     #   command: node /var/www/html/rhelportal/src/server.mjs       
     #   become: yes
 
+#- name: Pull rhel files from Git, run rhel app

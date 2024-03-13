@@ -568,7 +568,12 @@ button#download-csv {
   margin-left: 86%;
 }
 
-
+.outer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
 
 #download-csv i {
   font-size: 2rem;

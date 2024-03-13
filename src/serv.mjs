@@ -71,7 +71,7 @@ export function initiateSSHConnection() {
     console.log('Connected via SSH');
 
     if (sshConfig.selectedButton === 'RHEL') {
-      conn.exec(`yum updateinfo list security --installed`, function (err, stream) {
+      conn.exec(`yum updateinfo list security installed`, function (err, stream) {
         if (err) throw err;
         console.log(sshConfig);
 

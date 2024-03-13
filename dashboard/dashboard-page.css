@@ -1196,3 +1196,11 @@ p {
     margin-top: 3%;
 
 }
+
+
+.outer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }

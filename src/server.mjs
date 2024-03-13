@@ -92,6 +92,35 @@ app.all('/api', (req, res) => {
 });
 
 
+app.post('/status', (req, res) => {
+    // Log just the body of the request
+    console.log('Received data from Robocorp:', req.body);
+    
+    const message = req.body.message.trim(); // Trim any whitespace
+    console.log('Received message:', message);
+
+    if (message === 'version_not_found_in_errata') {
+        console.log('version-notfound');
+
+        if (clientSocket) {
+            clientSocket.send(JSON.stringify({ type:'Failure-serv' }));
+            clientSocket = null; // Reset the client socket after notifying
+        }
+    } 
+    else {
+        console.log('Received data', req.body);
+
+        if (clientSocket) {
+            clientSocket.send(JSON.stringify({ type: 'Failure-version' }));
+            clientSocket = null; // Reset the client socket after notifying
+        }
+    }
+});
+
+
+
+
+
 
 // WebSocket connection handling
 wss.on('connection', (ws) => {
@@ -119,16 +148,22 @@ app.get('/server', async (req, res) => {
 });
 
 
-function uipath(version) {
-    let selectedButton = newConfig.selectedButton;
+
+    
     app.get('/api/uipath', (req, res) => {
+        let selectedButton = newConfig.selectedButton;
+        let version = extractedVersion;
         res.json({ selectedButton: selectedButton, version: version, });
         console.log({ selectedButton: selectedButton, version: version });
     });
     app.listen(() => {
         console.log(`Server is running on port 3001`);
     });
-}
+    function uipath() {
+        app.listen(3001, () => {
+            console.log(`Server is running on port 3001`);
+        });
+    }
 
 
 
@@ -273,7 +308,7 @@ app.post('/ssh', (req, res) => {
                     hostnameStream.on('close', (code, signal) => {
                         conn.end();
                         res.json({ version, hostname });
-                        uipath(extractedVersion);
+                        // uipath(extractedVersion);
                         // connectToMongoDB();
                     }).on('data', data => {
                         hostname += data.toString();

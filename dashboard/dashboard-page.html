@@ -166,10 +166,27 @@
 
     </div>
 
+
+
     <div id="error-container">
         <div class="outer">
 
 
+        </div>
+    </div>
+
+    <div id="robocorp-error" style="display: none;">
+        <div class="outer">
+            <h4>Robocorp Error</h4>
+            <p>There was an error while trying to get the server details. Please try again.</p>
+            <button id="retry">Retry</button>
+        </div>
+    </div>
+
+    <div id="robocorp-err" style="display: none;">
+        <div class="outer">            
+            <p>Version not found in the Database . Try with another server</p>
+            <!-- <button id="retry">Retry</button> -->
         </div>
     </div>
 
@@ -409,7 +426,7 @@
 
     <script>
         // Create a WebSocket connection
-        const socket = new WebSocket('ws://3.17.182.211:3002');
+        const socket = new WebSocket('ws://3.138.37.204:3002');
 
         socket.addEventListener('message', (event) => {
             const message = JSON.parse(event.data);
@@ -418,6 +435,14 @@
                 // Update your UI or activate the check-rhea button
                 activateCheckrhsaButton();
             }
+            if (message.type === 'Failure-version') {
+                // Update your UI or activate the check-rhea button
+                loadingdo();
+            }
+            if (message.type === 'Failure-serv') {
+                // Update your UI or activate the check-rhea button
+                loadingdon();
+            }
         });
 
         function activateCheckrhsaButton() {
@@ -425,6 +450,20 @@
             loading.style.display = 'none';
             const checkRheaButton = document.getElementById('check-rhea');
             checkRheaButton.style.display = 'block';
+        }
+        function loadingdo(){
+            const loading = document.getElementById('loader11');
+            loading.style.display = 'none';
+            const robocorperror = document.getElementById('robocorp-error');
+            robocorperror.style.display = 'block';
+
+        }
+        function loadingdon(){
+            const loading = document.getElementById('loader11');
+            loading.style.display = 'none';
+            const robocorperror = document.getElementById('robocorp-err');
+            robocorperror.style.display = 'block';
+
         }
     </script>
 
