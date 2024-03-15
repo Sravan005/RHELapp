@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sshConfigContainer.style.display = 'none';
 
 
-    fetch('http://aapserver:3001/ssh', {
+    fetch('http://3.19.217.211:3001/ssh', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -283,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-        fetch('http://aapserver:3001/trigger-robocorp-process', {
+        fetch('http://3.19.217.211:3001/trigger-robocorp-process', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -371,7 +371,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadingGif.style.display = 'block';
 
     // // Now fetch the updated RHSA numbers
-    fetch('http://aapserver:3001/api')
+    fetch('http://3.19.217.211:3001/api')
       .then(response => response.json())
       .then(data => {
         data = Array.isArray(data[0]) ? data.flat() : data;
@@ -391,7 +391,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         data.forEach(result => {
 
-          const fetchPromise = fetch(`http://aapserver:3001/rhea/${result}`)
+          const fetchPromise = fetch(`http://3.19.217.211:3001/rhea/${result}`)
             .then(response => {
               if (!response.ok) {
                 throw new Error(`Error fetching data for ${result}`);
